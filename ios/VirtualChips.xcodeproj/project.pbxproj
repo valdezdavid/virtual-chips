@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */; };
-		F630F4701FBA8C6A00CC0673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F46F1FBA8C6A00CC0673 /* ViewController.swift */; };
 		F630F4731FBA8C6A00CC0673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4711FBA8C6A00CC0673 /* Main.storyboard */; };
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
 		F630F4781FBA8C6A00CC0673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */; };
 		F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */; };
+		F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */; };
+		F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,6 @@
 /* Begin PBXFileReference section */
 		F630F46A1FBA8C6A00CC0673 /* VirtualChips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualChips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F630F46F1FBA8C6A00CC0673 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F630F4721FBA8C6A00CC0673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F630F4741FBA8C6A00CC0673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F630F4771FBA8C6A00CC0673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		F630F47E1FBA8C6A00CC0673 /* VirtualChipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualChipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualChipsTests.swift; sourceTree = "<group>"; };
 		F630F4841FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,6 @@
 				F630F48E1FBA8CC100CC0673 /* Models */,
 				F630F48D1FBA8C9500CC0673 /* Plugins */,
 				F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */,
-				F630F46F1FBA8C6A00CC0673 /* ViewController.swift */,
 				F630F4711FBA8C6A00CC0673 /* Main.storyboard */,
 				F630F4741FBA8C6A00CC0673 /* Assets.xcassets */,
 				F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */,
@@ -124,6 +125,8 @@
 		F630F4901FBA8CD200CC0673 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */,
+				F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -231,7 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F630F4701FBA8C6A00CC0673 /* ViewController.swift in Sources */,
+				F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */,
+				F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */,
 				F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +442,7 @@
 				F630F4891FBA8C6A00CC0673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F630F48A1FBA8C6A00CC0673 /* Build configuration list for PBXNativeTarget "VirtualChipsTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +451,7 @@
 				F630F48C1FBA8C6A00CC0673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
