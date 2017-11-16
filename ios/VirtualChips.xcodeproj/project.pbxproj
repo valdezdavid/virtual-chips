@@ -12,6 +12,11 @@
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
 		F630F4781FBA8C6A00CC0673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */; };
 		F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */; };
+		F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */; };
+		F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */; };
+		F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D11FBBC8890076E59C /* NewGameViewController.swift */; };
+		F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */; };
+		F6D493D61FBBDC870076E59C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */; };
 		F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */; };
 		F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +41,11 @@
 		F630F47E1FBA8C6A00CC0673 /* VirtualChipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualChipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualChipsTests.swift; sourceTree = "<group>"; };
 		F630F4841FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHubViewController.swift; path = Controllers/GameHubViewController.swift; sourceTree = "<group>"; };
+		F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
+		F6D493D11FBBC8890076E59C /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = Controllers/NewGameViewController.swift; sourceTree = "<group>"; };
+		F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JoinGameViewController.swift; path = Controllers/JoinGameViewController.swift; sourceTree = "<group>"; };
+		F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = Controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +137,11 @@
 			children = (
 				F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */,
 				F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */,
+				F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */,
+				F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */,
+				F6D493D11FBBC8890076E59C /* NewGameViewController.swift */,
+				F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */,
+				F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -235,8 +250,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */,
+				F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */,
 				F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */,
+				F6D493D61FBBDC870076E59C /* LoadingScreenViewController.swift in Sources */,
+				F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */,
 				F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */,
+				F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */,
+				F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
