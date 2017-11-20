@@ -1,11 +1,90 @@
 package game;
 
-import java.util.Set;
+import server.Response;
 
 public class Hand {
 	private User nextToMove;
 	private Game game;
-	private Set<Pot> pots;
-	private Pot activePot;
+	private Pot pot = new Pot();
+	private int currentBet = 0;
+	private int round = 0;
+	private User lastBetter = null;
+	private User dealer;
 	
+	public Hand(Game game, User dealer) {
+		this.dealer = dealer;
+		game.resetCurrentBet();
+		User smallBlind = game.userAfter(dealer);
+		User bigBlind = game.userAfter(smallBlind);
+		nextToMove = game.userAfter(bigBlind);
+		this.game = game;
+		currentBet = game.getBigBlind();
+		smallBlind.bet(game.getSmallBlind());
+		bigBlind.bet(currentBet);
+		game.resetFolded();
+		requestMove();
+	}
+	
+	public void placeBet(User u, int amount) {
+		pot.placeBet(u, amount);
+	}
+	
+	public void requestMove() {
+		if (lastBetter == nextToMove) {
+			if (round == 3) {
+				finishHand();
+			}else {
+				lastBetter = null;
+				nextToMove = game.userAfter(dealer);
+				currentBet = 0;
+				round++;
+			}
+		}else {
+			if (lastBetter == null) {
+				lastBetter = nextToMove;
+			}
+			if (nextToMove.isFolded() || !nextToMove.canMakeMove()) {
+				nextToMove = game.userAfter(nextToMove);
+				requestMove();
+			} else {
+				Response playerToMoveResponse = new Response("playerToMove");
+				playerToMoveResponse.addParam("id", nextToMove.getId());
+				playerToMoveResponse.addParam("chips", nextToMove.getChips());
+				
+				game.sendResponseToAll(playerToMoveResponse);
+				
+				Response moveOptionsResponse = new Response("moveOptions");
+				if (currentBet > nextToMove.getCurrentBet()) {
+					moveOptionsResponse.addParam("canCheck", false);
+				}else {
+					moveOptionsResponse.addParam("canCheck", true);
+				}
+				int toCall = currentBet - nextToMove.getCurrentBet();
+				moveOptionsResponse.addParam("callAmount", toCall);
+				if (toCall < nextToMove.getChips()) {
+					moveOptionsResponse.addParam("canRaise", true);
+				}else {
+					moveOptionsResponse.addParam("canRaise", false);
+				}
+				int maxRaise = nextToMove.getChips() - toCall;
+				moveOptionsResponse.addParam("maxRaise", maxRaise);
+				moveOptionsResponse.addParam("minRaise", game.getBigBlind() < maxRaise ? game.getBigBlind() : maxRaise);
+			}
+		}
+	}
+	
+	
+	public void finishHand() {
+		
+	}
+	
+	public void call() {
+		
+	}
+	
+	public void goToNextPlayer() {
+		nextToMove = game.userAfter(nextToMove);
+		requestMove();
+	}
+
 }

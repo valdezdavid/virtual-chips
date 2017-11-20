@@ -8,9 +8,11 @@ import javax.websocket.Session;
 
 import com.google.gson.Gson;
 
+import game.User;
+
 public class Response {
 	private String event;
-	private Map<String, Object> params = new HashMap<String, Object>();
+	private Map<String, String> params = new HashMap<String, String>();
 	
 	public Response(String event) {
 		this.event = event;
@@ -20,26 +22,22 @@ public class Response {
 		return event;
 	}
 
-	public void setCommand(String event) {
-		this.event = event;
-	}
-
-	public Map<String, Object> getParams() {
+	public Map<String, String> getParams() {
 		return params;
 	}
 
-	public void setParams(Map<String, Object> params) {
+	public void setParams(Map<String, String> params) {
 		this.params = params;
 	}
 	
 	public void addParam(String key, Object value) {
-		params.put(key, value);
+		params.put(key, String.valueOf(value));
 	}
 	
-	public void send(Session session) {
+	public void send(User user) {
 		String json = new Gson().toJson(this);
 		try {
-			session.getBasicRemote().sendText(json);
+			user.getSession().getBasicRemote().sendText(json);
 		} catch (IOException e) {
 			System.out.println("ioe: " + e.getMessage());
 		}

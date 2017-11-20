@@ -15,9 +15,10 @@ public class Game {
 	private List<User> users = new ArrayList<User>();
 	
 	//Game settings
-	private int smallBlind;
-	private int bigBlind;
-	private int maxUsers = 8;
+	private int smallBlind = 5;
+
+	private int bigBlind = 10;
+	private int numUsers = 2;
 	
 	
 	//Game State
@@ -25,6 +26,11 @@ public class Game {
 	private Hand currentHand;
 	
 	
+	public Hand getCurrentHand() {
+		return currentHand;
+	}
+
+
 	public Game(User host) {
 		this.host = host;
 		users.add(host);
@@ -54,22 +60,66 @@ public class Game {
 	
 	public void removeUser(User user) {
 		users.remove(user);
+		if (users.size() == 0) {
+			destroyGame();
+		}else if (user == host) {
+			host = users.get(0);
+		}
 	}
 
 	public boolean addUser(User user) {
-		if (users.size() >= maxUsers) {
+		if (users.size() >= numUsers) {
 			return false;
 		}else {
 			users.add(user);
 			Response r = new Response("userJoined");
 			r.addParam("user", user);
-			r.send(host.getSession());
+			r.send(host);
+			if (users.size() == numUsers) {
+				startGame();
+			}
 			return true;
 		}
 	}
 	
+	public void sendResponseToAll(Response r) {
+		for (User u : users) {
+			r.send(u);
+		}
+	}
+	
 	public void startGame() {
-		
+		dealer = host;
+		currentHand = new Hand(this, dealer);
+	}
+	
+	public void destroyGame() {
+		games.remove(id);
+	}
+	
+	public User userAfter(User user) {
+		int index = users.indexOf(user) + 1;
+		index %= users.size();
+		return users.get(index);
+	}
+	
+	public int getSmallBlind() {
+		return smallBlind;
+	}
+	
+	public int getBigBlind() {
+		return bigBlind;
+	}
+	
+	public void resetFolded() {
+		for (User u : users) {
+			u.resetFolded();
+		}
+	}
+	public void resetCurrentBet() {
+		for (User u : users) {
+			u.resetCurrentBet();
+		}
 	}
 	
 	
