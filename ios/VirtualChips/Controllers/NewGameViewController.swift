@@ -58,7 +58,7 @@ class NewGameViewController: UIViewController {
         print(name)
         let messageContent = ["numPlayers" : num, "buyIn": buy
                               , "smallBlind": "2", "bigBlind": "4"]
-        let m1 = SendingMessage(command: "startGame", params: messageContent as! [String : String])
+        let m1 = SendingMessage(command: "startGame", params: messageContent)
         print("TESTING CLICK HMMM")
         let jsonEncoder = JSONEncoder()
         do {
@@ -95,7 +95,7 @@ class NewGameViewController: UIViewController {
         name = sessionNameField.text!
         let messageContent = ["numberOfPlayers" : num, "buyInAmount": buy,
                               "sessionName" : name]
-        let m1 = SendingMessage(command: "startGame", params: messageContent as! [String : String])
+        let m1 = SendingMessage(command: "startGame", params: messageContent)
         print("TESTING CLICK HMMM")
         let jsonEncoder = JSONEncoder()
         do {
@@ -133,7 +133,7 @@ class NewGameViewController: UIViewController {
         name = sessionNameField.text!
         let messageContent = ["numberOfPlayers" : num, "buyInAmount": buy,
                               "sessionName" : name]
-        let m1 = SendingMessage(command: "startGame", params: messageContent as! [String : String])
+        let m1 = SendingMessage(command: "startGame", params: messageContent)
         print("TESTING CLICK HMMM")
         let jsonEncoder = JSONEncoder()
         do {
@@ -160,31 +160,7 @@ class NewGameViewController: UIViewController {
     
 } //CLASS
 extension NewGameViewController : WebSocketDelegate {
-    func websocketDidConnect(socket: WebSocketClient) {
-        print("the socket has connected!!")
-        let messageContent = ["username": "hello", "password": "hi"]
-        let message1 = SendingMessage(command: "login", params: messageContent)
-        let jsonEncoder = JSONEncoder()
-        
-        do {
-            if let jsonData = try? jsonEncoder.encode(message1) {
-                if let jsonString = String(data: jsonData, encoding: .utf8){
-                    socket.write(string: jsonString)
-                    print("below is the jsonString")
-                    print(jsonString)
-                    print("has tried to write the data")
-                }
-                else{
-                    print ("encoding failed")
-                }
-            }
-            else {
-                print ("encoding failed")
-                return
-            }
-        }
-    }
-    
+
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         
     }
@@ -202,11 +178,7 @@ extension NewGameViewController : WebSocketDelegate {
         print (receivedMessage)
         
     }
-    
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        
-    }
-    
+
     
 }
 

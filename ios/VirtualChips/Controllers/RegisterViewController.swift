@@ -18,10 +18,12 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var repeatPasswordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 ServerConnect.socket?.delegate = self
+        errorLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +35,11 @@ ServerConnect.socket?.delegate = self
 
     @IBAction func registerButton(_ sender: Any) {
         
+        if (passwordField.text != repeatPasswordField.text) {
+            errorLabel.text = "Passwords do not match!"
+            errorLabel.isHidden = false
+            return
+        }
         let messageContent = ["username" : usernameField.text, "password": passwordField.text]
         let m1 = SendingMessage(command: "register", params: messageContent as! [String : String])
         let jsonEncoder = JSONEncoder()
@@ -53,35 +60,11 @@ ServerConnect.socket?.delegate = self
                 return
             }
         }
-        performSegue(withIdentifier: REGISTER_GAMEHUB_SEGUE, sender: nil)
+        
     }
 } //CLASS
 
 extension RegisterViewController : WebSocketDelegate {
-    func websocketDidConnect(socket: WebSocketClient) {
-        print("the socket has connected!!")
-        let messageContent = ["username": "hello", "password": "hi"]
-        let message1 = SendingMessage(command: "login", params: messageContent)
-        let jsonEncoder = JSONEncoder()
-        
-        do {
-            if let jsonData = try? jsonEncoder.encode(message1) {
-                if let jsonString = String(data: jsonData, encoding: .utf8){
-                    socket.write(string: jsonString)
-                    print("below is the jsonString")
-                    print(jsonString)
-                    print("has tried to write the data")
-                }
-                else{
-                    print ("encoding failed")
-                }
-            }
-            else {
-                print ("encoding failed")
-                return
-            }
-        }
-    }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         
@@ -98,12 +81,15 @@ extension RegisterViewController : WebSocketDelegate {
         let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
         print ("This is the recieved message")
         print (receivedMessage)
+        if receivedMessage.params["success"] == "true" {
+            performSegue(withIdentifier: REGISTER_GAMEHUB_SEGUE, sender: nil)
+        }else{
+            errorLabel.text = "Username already exists!"
+            errorLabel.isHidden = false
+        }
         
     }
-    
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        
-    }
+
     
     
 }

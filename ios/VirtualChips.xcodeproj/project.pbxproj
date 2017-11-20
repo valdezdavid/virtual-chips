@@ -14,7 +14,6 @@
 		F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F46D1FBA8C6A00CC0673 /* AppDelegate.swift */; };
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
 		F630F4781FBA8C6A00CC0673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */; };
-		F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */; };
 		F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */; };
 		F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */; };
 		F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D11FBBC8890076E59C /* NewGameViewController.swift */; };
@@ -55,8 +54,6 @@
 		F630F4771FBA8C6A00CC0673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F630F4791FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F630F47E1FBA8C6A00CC0673 /* VirtualChipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualChipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualChipsTests.swift; sourceTree = "<group>"; };
-		F630F4841FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHubViewController.swift; path = Controllers/GameHubViewController.swift; sourceTree = "<group>"; };
 		F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		F6D493D11FBBC8890076E59C /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = Controllers/NewGameViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				F630F46C1FBA8C6A00CC0673 /* VirtualChips */,
-				F630F4811FBA8C6A00CC0673 /* VirtualChipsTests */,
 				F630F46B1FBA8C6A00CC0673 /* Products */,
 				9DF9AC7C62BEF82FC1ABAF3C /* Pods */,
 				F5188CEF923AACBDDDE55C07 /* Frameworks */,
@@ -146,15 +142,6 @@
 				F630F4791FBA8C6A00CC0673 /* Info.plist */,
 			);
 			path = VirtualChips;
-			sourceTree = "<group>";
-		};
-		F630F4811FBA8C6A00CC0673 /* VirtualChipsTests */ = {
-			isa = PBXGroup;
-			children = (
-				F630F4821FBA8C6A00CC0673 /* VirtualChipsTests.swift */,
-				F630F4841FBA8C6A00CC0673 /* Info.plist */,
-			);
-			path = VirtualChipsTests;
 			sourceTree = "<group>";
 		};
 		F630F48D1FBA8C9500CC0673 /* Plugins */ = {
@@ -250,7 +237,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = company;
 				TargetAttributes = {
 					F630F4691FBA8C6A00CC0673 = {
@@ -432,7 +419,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F630F4831FBA8C6A00CC0673 /* VirtualChipsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +453,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -475,7 +463,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -517,7 +509,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -525,7 +519,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
