@@ -3,7 +3,9 @@ package game;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import server.Response;
@@ -45,12 +47,14 @@ public class Pot {
 		}
 		int max = chips.get(user);
 		int sum = 0;
-		for (User u : chips.keySet()) {
+		for(Iterator<Entry<User, Integer>> it = chips.entrySet().iterator(); it.hasNext(); ) {
+			Entry<User, Integer> entry = it.next();
+			User u = entry.getKey();
 			int userChips = chips.get(u);
 			int amount = Math.min(userChips, max);
 			sum += amount;
 			if (userChips-amount == 0) {
-				chips.remove(u);
+				it.remove();
 			}else {
 				chips.put(u, userChips-amount);
 			}			
