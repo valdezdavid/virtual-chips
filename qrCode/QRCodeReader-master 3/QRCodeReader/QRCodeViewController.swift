@@ -1,14 +1,12 @@
 //
-//  JoinGameViewController.swift
-//  VirtualChips
+//  QRCodeViewController.swift
+//  QRCodeReader
 //
-//  Created by David Valdez on 11/14/17.
-//  Copyright © 2017 company. All rights reserved.
 //
-///Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
+
 import UIKit
-import Starscream
-class JoinGameViewController: UIViewController {
+
+class QRCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +18,13 @@ class JoinGameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     
-    @IBAction func cancelJoinGameClicked(_ sender: Any) {
+    // MARK: - Navigation
+
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
-} //CLASS
 
+}

@@ -12,7 +12,13 @@ class NewGameCodeViewController: UIViewController {
 
     private let NEW_GAME_LOADING_SEGUE = "newGameLoadingSegue"
     
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var testButton: UIButton!
+    
     private let TEST_SEGUE = "testSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,21 +30,17 @@ class NewGameCodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func testClicked(_ sender: Any) {
-        performSegue(withIdentifier: TEST_SEGUE, sender: nil)
-    }
     @IBAction func buttonClicked(_ sender: Any) {
-    performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
+        if let myString = textField.text
+        {
+            let data = myString.data(using: .ascii, allowLossyConversion: false)
+            let filter = CIFilter(name: "CIQRCodeGenerator")
+            filter?.setValue(data, forKey: "inputMessage")
+            
+            let img = UIImage(ciImage: (filter?.outputImage)!)
+            
+            imageView.image = img
+        }
+        performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
     }
 }

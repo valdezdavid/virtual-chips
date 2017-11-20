@@ -337,6 +337,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMQ-97-hML">
+                                <rect key="frame" x="259" y="113" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="cameraImage"/>
+                                <connections>
+                                    <segue destination="AXj-7j-XtF" kind="presentation" id="zby-iH-tob"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="WJn-AZ-4sd"/>
@@ -345,6 +353,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0S-Iu-Sac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1472.1139430284859" y="2728.8000000000002"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="j4R-P6-idp">
+            <objects>
+                <viewController id="AXj-7j-XtF" customClass="ScannerViewController" customModule="VirtualChips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K41-nX-RuA">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-SU-cBB">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-Oc-mNl">
+                                        <rect key="frame" x="306" y="14" width="55" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-GT-J3i">
+                                        <rect key="frame" x="8" y="14" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lN-dD-M73">
+                                <rect key="frame" x="0.0" y="325" width="667" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="asu-IJ-0LU"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="3lN-dD-M73" id="fuv-Mb-654"/>
+                        <outlet property="topbar" destination="XuL-SU-cBB" id="mDs-jA-Oef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhL-ax-AA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882.3088455772115" y="3492"/>
         </scene>
         <!--Loading Screen View Controller-->
         <scene sceneID="75u-uk-Z4R">
@@ -613,18 +670,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-Fh-5qP">
-                                <rect key="frame" x="187" y="226" width="30" height="30"/>
+                                <rect key="frame" x="318" y="259" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="test"/>
                                 <connections>
-                                    <action selector="testClicked:" destination="KF0-0R-IWp" eventType="touchUpInside" id="Yv7-kl-euy"/>
+                                    <action selector="buttonClicked:" destination="KF0-0R-IWp" eventType="touchUpInside" id="Srq-Lp-Dsh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74L-2v-A8x">
+                                <rect key="frame" x="213" y="123" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-Vc-7p7">
+                                <rect key="frame" x="249" y="85" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jYi-6B-OCN"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="74L-2v-A8x" id="HfU-om-brK"/>
+                        <outlet property="testButton" destination="QP2-Fh-5qP" id="a5M-qn-8vB"/>
+                        <outlet property="textField" destination="TdG-Vc-7p7" id="eEo-8t-7MI"/>
                         <segue destination="Ekl-fG-7E7" kind="show" identifier="testSegue" id="TJn-oQ-5d6"/>
                     </connections>
                 </viewController>
@@ -634,6 +705,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cameraImage" width="150" height="150"/>
         <image name="inGameView" width="640" height="359"/>
         <image name="pokerBG" width="512" height="352"/>
     </resources>
