@@ -7,11 +7,16 @@ import java.util.Map.Entry;
 import javax.websocket.Session;
 
 import server.Response;
+import server.VirtualChipDB_Insertion;
 
 public class User {
 	static private Map<Integer, User> users = new HashMap<Integer, User>();
 	private Session session;
 	private Game currentGame;
+	public Game getCurrentGame() {
+		return currentGame;
+	}
+
 	private int id;
 	private String username;
 	private String userId;
@@ -88,6 +93,10 @@ public class User {
 		case "fold":
 			fold();
 			break;
+		case "chooseWinner":
+			currentGame.getCurrentHand().getPot().redeem(users.get(Integer.valueOf((String)params.get("userId"))));
+			currentGame.getCurrentHand().finishHand();
+			break;
 		}
 	}
 	
@@ -105,20 +114,32 @@ public class User {
 
 	private void login(String username, String password) {
 		// TODO check database
-		this.username = username;
-		authenticated = true;
-		Response r = new Response("login");
-		r.addParam("success", true);
-		r.send(this);
+		if (VirtualChipDB_Insertion.loginUser(username, password)) {
+			this.username = username;
+			authenticated = true;
+			Response r = new Response("login");
+			r.addParam("success", true);
+			r.send(this);
+		} else {
+			Response r = new Response("login");
+			r.addParam("success", false);
+			r.send(this);
+		}
 	}
 	
 	private void register(String username, String password) {
 		// TODO add to database
-		this.username = username;
-		authenticated = true;
-		Response r = new Response("register");
-		r.addParam("success", true);
-		r.send(this);
+		if (VirtualChipDB_Insertion.registerNewUser(username, password)) {
+			this.username = username;
+			authenticated = true;
+			Response r = new Response("register");
+			r.addParam("success", true);
+			r.send(this);
+		} else {
+			Response r = new Response("login");
+			r.addParam("success", false);
+			r.send(this);
+		}
 	}
 	
 	private void startGame(int buyIn, int smallBlind, int bigBlind, int numPlayers) {
