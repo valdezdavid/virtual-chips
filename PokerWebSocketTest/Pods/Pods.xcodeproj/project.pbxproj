@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BB7B70F633EF822B62141578AF4950B /* Pods-PokerWebSocketTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 866FDA66F9F195F91578B47D12A2B41C /* Pods-PokerWebSocketTest-dummy.m */; };
+		15238BADE18846ACC7CBD5912F48C93B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		2340E5C3F06495F8E2FA3DAB7BE683B0 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFCB164A2D877E8FAA5F1DD3BAA3707 /* Starscream-dummy.m */; };
+		336C971BDB243A60DD725470058376D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		49C14FE20AE64D3455C1F5BC0CFEE532 /* Pods-PokerWebSocketTestTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D227F898D902F1D7FBA880341F95EB02 /* Pods-PokerWebSocketTestTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BA2813CDBBB635DA28A024B20A11E88 /* Pods-PokerWebSocketTestTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F56D32272EBB62FF66188194C6B33 /* Pods-PokerWebSocketTestTests-dummy.m */; };
+		8B3179011B83E326D3A5695CC7F1DA0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		8F968726FC040EACEA53F42BF3AB9788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		9BD8A65D48C18D67EF4A3A5B53147158 /* Pods-PokerWebSocketTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12CA378336090067DE432628579B4F3B /* Pods-PokerWebSocketTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE5A1626B6298DA12C39B0FA7588CAF5 /* Pods-PokerWebSocketTestUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575F20DFE771590CA7B2DE569BE53C9 /* Pods-PokerWebSocketTestUITests-dummy.m */; };
+		CB27C1E5B10E6297B8912667C6C243E2 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1F16DBE6C0E127EA4B342379413404F /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD0E4708F1B72FA50105FC43948D265 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */; };
+		DE314566A4E41E832A420099BA3CB719 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */; };
+		E69FD7F3BB3DCF4D04ED72ED756D95D8 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */; };
+		EB3929EE7B0630FD15A8D66FC2808C9F /* Pods-PokerWebSocketTestUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 151D84C5ED182A7CA67BCFBF1F15DBE5 /* Pods-PokerWebSocketTestUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7150DA062535682A85B86761A11A3ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 124AEBA4751CB8333D0345FD9F4FC58D;
+			remoteInfo = Starscream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0493BE1A84B11977C2038C6F5BBF41CD /* Pods-PokerWebSocketTestUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokerWebSocketTestUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		04D91E8FF3BCD55EE7101CDC3EE28289 /* Pods_PokerWebSocketTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PokerWebSocketTestUITests.framework; path = "Pods-PokerWebSocketTestUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B0B2A4109DC2E66799D113DE346AC25 /* Pods-PokerWebSocketTestUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTestUITests-resources.sh"; sourceTree = "<group>"; };
+		0EACA123C3703316114A944ECEC99C8B /* Pods-PokerWebSocketTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PokerWebSocketTest-acknowledgements.markdown"; sourceTree = "<group>"; };
+		12333CD5C4C67607486B6F2E4565D449 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12CA378336090067DE432628579B4F3B /* Pods-PokerWebSocketTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PokerWebSocketTest-umbrella.h"; sourceTree = "<group>"; };
+		12D77D3319FD7D837BACDF14137997DB /* Pods-PokerWebSocketTestTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PokerWebSocketTestTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		151D84C5ED182A7CA67BCFBF1F15DBE5 /* Pods-PokerWebSocketTestUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PokerWebSocketTestUITests-umbrella.h"; sourceTree = "<group>"; };
+		21F55CBAD52A7230814AB404A0814A5C /* Pods-PokerWebSocketTestTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTestTests-resources.sh"; sourceTree = "<group>"; };
+		2491720B65EBA3BC0AB63A381A7087C7 /* Pods-PokerWebSocketTestUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTestUITests-frameworks.sh"; sourceTree = "<group>"; };
+		294151810F11066AA65AC9F5FDC0D629 /* Pods-PokerWebSocketTestUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PokerWebSocketTestUITests.modulemap"; sourceTree = "<group>"; };
+		2DA03655BC0B814AD9F4B4B3C6B3A109 /* Pods_PokerWebSocketTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PokerWebSocketTestTests.framework; path = "Pods-PokerWebSocketTestTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		341613BE42AF5FBA1CE77AC7AF7D8143 /* Pods_PokerWebSocketTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PokerWebSocketTest.framework; path = "Pods-PokerWebSocketTest.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/WebSocket.swift; sourceTree = "<group>"; };
+		4C94CE153009683D39E5629E69BCB3B9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F40A396B65A1819D385AE54BE39965E /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		5C4D7528396B8BF026AA60B65311B868 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6046A108313674ABC1210C63E41B183D /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Starscream.modulemap; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		70CA9CF0DA75F3D85A166DC745BA44CE /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7875CA757E46BE5582C425B5BB827CEA /* Pods-PokerWebSocketTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTest-frameworks.sh"; sourceTree = "<group>"; };
+		7E5038BE364F5DADD0493E4CB70971FC /* Pods-PokerWebSocketTestTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTestTests-frameworks.sh"; sourceTree = "<group>"; };
+		8041A31FF2EC49C9B1DBF807E47B9C6A /* Pods-PokerWebSocketTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PokerWebSocketTest.modulemap"; sourceTree = "<group>"; };
+		8222BB7DC75F96887651D8AACAFB36AC /* Pods-PokerWebSocketTestTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PokerWebSocketTestTests.modulemap"; sourceTree = "<group>"; };
+		8430670042A56A1986D7EE8581DFD0A6 /* Pods-PokerWebSocketTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		8575F20DFE771590CA7B2DE569BE53C9 /* Pods-PokerWebSocketTestUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PokerWebSocketTestUITests-dummy.m"; sourceTree = "<group>"; };
+		866FDA66F9F195F91578B47D12A2B41C /* Pods-PokerWebSocketTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PokerWebSocketTest-dummy.m"; sourceTree = "<group>"; };
+		8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression.swift; sourceTree = "<group>"; };
+		8C206D9517AB9379F8202E97DDEB6B35 /* Pods-PokerWebSocketTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokerWebSocketTest-acknowledgements.plist"; sourceTree = "<group>"; };
+		8FE09D2A20D152D20C709BE6656181C9 /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9AF664B0018D45D29B0DDBDF9E1ADC3F /* Pods-PokerWebSocketTestTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokerWebSocketTestTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A20F56D32272EBB62FF66188194C6B33 /* Pods-PokerWebSocketTestTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PokerWebSocketTestTests-dummy.m"; sourceTree = "<group>"; };
+		A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/SSLSecurity.swift; sourceTree = "<group>"; };
+		A7F871C711E9F1FD7B68E5207251DC72 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA83F951E78059453D9175F050F9466B /* Pods-PokerWebSocketTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTest.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFCB164A2D877E8FAA5F1DD3BAA3707 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		C3E5B0EAE1F1C858387B15A734F41A1B /* Pods-PokerWebSocketTest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokerWebSocketTest-resources.sh"; sourceTree = "<group>"; };
+		C5AA629D6E1A468195761849F1240303 /* Pods-PokerWebSocketTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTest.release.xcconfig"; sourceTree = "<group>"; };
+		C9268032B700FCC7F3B152BECE5F6D0F /* Pods-PokerWebSocketTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0DC0C601479A9BA90713C43E6DEA6C1 /* Pods-PokerWebSocketTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D227F898D902F1D7FBA880341F95EB02 /* Pods-PokerWebSocketTestTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PokerWebSocketTestTests-umbrella.h"; sourceTree = "<group>"; };
+		D32A8747AB2FC03D9A37F9F24FDFE2F2 /* Pods-PokerWebSocketTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokerWebSocketTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD46792C56625EFCDEA6783679921E44 /* Pods-PokerWebSocketTestUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PokerWebSocketTestUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E1F16DBE6C0E127EA4B342379413404F /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CC031006CEE87A3663D105637DEFD73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F968726FC040EACEA53F42BF3AB9788 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		362CA73EF8505C45930EEE3D768544D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3179011B83E326D3A5695CC7F1DA0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD70903F59E2171F1DFC0ADF99E9C90B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15238BADE18846ACC7CBD5912F48C93B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F442047AF54837A8DDA7DB3C3D802273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				336C971BDB243A60DD725470058376D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12C84EC4656CA4A1AB023C7CB51D464B /* Pods-PokerWebSocketTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4C94CE153009683D39E5629E69BCB3B9 /* Info.plist */,
+				294151810F11066AA65AC9F5FDC0D629 /* Pods-PokerWebSocketTestUITests.modulemap */,
+				DD46792C56625EFCDEA6783679921E44 /* Pods-PokerWebSocketTestUITests-acknowledgements.markdown */,
+				0493BE1A84B11977C2038C6F5BBF41CD /* Pods-PokerWebSocketTestUITests-acknowledgements.plist */,
+				8575F20DFE771590CA7B2DE569BE53C9 /* Pods-PokerWebSocketTestUITests-dummy.m */,
+				2491720B65EBA3BC0AB63A381A7087C7 /* Pods-PokerWebSocketTestUITests-frameworks.sh */,
+				0B0B2A4109DC2E66799D113DE346AC25 /* Pods-PokerWebSocketTestUITests-resources.sh */,
+				151D84C5ED182A7CA67BCFBF1F15DBE5 /* Pods-PokerWebSocketTestUITests-umbrella.h */,
+				D32A8747AB2FC03D9A37F9F24FDFE2F2 /* Pods-PokerWebSocketTestUITests.debug.xcconfig */,
+				D0DC0C601479A9BA90713C43E6DEA6C1 /* Pods-PokerWebSocketTestUITests.release.xcconfig */,
+			);
+			name = "Pods-PokerWebSocketTestUITests";
+			path = "Target Support Files/Pods-PokerWebSocketTestUITests";
+			sourceTree = "<group>";
+		};
+		24C23A5A61CA61E49A7504920D07D3A4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7F871C711E9F1FD7B68E5207251DC72 /* Info.plist */,
+				6046A108313674ABC1210C63E41B183D /* Starscream.modulemap */,
+				8FE09D2A20D152D20C709BE6656181C9 /* Starscream.xcconfig */,
+				BCFCB164A2D877E8FAA5F1DD3BAA3707 /* Starscream-dummy.m */,
+				4F40A396B65A1819D385AE54BE39965E /* Starscream-prefix.pch */,
+				E1F16DBE6C0E127EA4B342379413404F /* Starscream-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		31489AAD8D184CF00A6682E0AD949090 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A3E75E2DF5589A1D56F872FD986C /* Pods-PokerWebSocketTest */,
+				7C9E48988E5A17F757AA2E29C19EB7B5 /* Pods-PokerWebSocketTestTests */,
+				12C84EC4656CA4A1AB023C7CB51D464B /* Pods-PokerWebSocketTestUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3472A81D0DB31608B2D83C2463248903 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB62A5E4B3983660FF962BD54E1FC6E7 /* Starscream */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C9E48988E5A17F757AA2E29C19EB7B5 /* Pods-PokerWebSocketTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				12333CD5C4C67607486B6F2E4565D449 /* Info.plist */,
+				8222BB7DC75F96887651D8AACAFB36AC /* Pods-PokerWebSocketTestTests.modulemap */,
+				12D77D3319FD7D837BACDF14137997DB /* Pods-PokerWebSocketTestTests-acknowledgements.markdown */,
+				9AF664B0018D45D29B0DDBDF9E1ADC3F /* Pods-PokerWebSocketTestTests-acknowledgements.plist */,
+				A20F56D32272EBB62FF66188194C6B33 /* Pods-PokerWebSocketTestTests-dummy.m */,
+				7E5038BE364F5DADD0493E4CB70971FC /* Pods-PokerWebSocketTestTests-frameworks.sh */,
+				21F55CBAD52A7230814AB404A0814A5C /* Pods-PokerWebSocketTestTests-resources.sh */,
+				D227F898D902F1D7FBA880341F95EB02 /* Pods-PokerWebSocketTestTests-umbrella.h */,
+				C9268032B700FCC7F3B152BECE5F6D0F /* Pods-PokerWebSocketTestTests.debug.xcconfig */,
+				8430670042A56A1986D7EE8581DFD0A6 /* Pods-PokerWebSocketTestTests.release.xcconfig */,
+			);
+			name = "Pods-PokerWebSocketTestTests";
+			path = "Target Support Files/Pods-PokerWebSocketTestTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				3472A81D0DB31608B2D83C2463248903 /* Pods */,
+				CBE448F32BFBAEAA70A7591A56EA7CEC /* Products */,
+				31489AAD8D184CF00A6682E0AD949090 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		97C8A3E75E2DF5589A1D56F872FD986C /* Pods-PokerWebSocketTest */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D7528396B8BF026AA60B65311B868 /* Info.plist */,
+				8041A31FF2EC49C9B1DBF807E47B9C6A /* Pods-PokerWebSocketTest.modulemap */,
+				0EACA123C3703316114A944ECEC99C8B /* Pods-PokerWebSocketTest-acknowledgements.markdown */,
+				8C206D9517AB9379F8202E97DDEB6B35 /* Pods-PokerWebSocketTest-acknowledgements.plist */,
+				866FDA66F9F195F91578B47D12A2B41C /* Pods-PokerWebSocketTest-dummy.m */,
+				7875CA757E46BE5582C425B5BB827CEA /* Pods-PokerWebSocketTest-frameworks.sh */,
+				C3E5B0EAE1F1C858387B15A734F41A1B /* Pods-PokerWebSocketTest-resources.sh */,
+				12CA378336090067DE432628579B4F3B /* Pods-PokerWebSocketTest-umbrella.h */,
+				AA83F951E78059453D9175F050F9466B /* Pods-PokerWebSocketTest.debug.xcconfig */,
+				C5AA629D6E1A468195761849F1240303 /* Pods-PokerWebSocketTest.release.xcconfig */,
+			);
+			name = "Pods-PokerWebSocketTest";
+			path = "Target Support Files/Pods-PokerWebSocketTest";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB62A5E4B3983660FF962BD54E1FC6E7 /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */,
+				A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */,
+				3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */,
+				24C23A5A61CA61E49A7504920D07D3A4 /* Support Files */,
+			);
+			name = Starscream;
+			path = Starscream;
+			sourceTree = "<group>";
+		};
+		CBE448F32BFBAEAA70A7591A56EA7CEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				341613BE42AF5FBA1CE77AC7AF7D8143 /* Pods_PokerWebSocketTest.framework */,
+				2DA03655BC0B814AD9F4B4B3C6B3A109 /* Pods_PokerWebSocketTestTests.framework */,
+				04D91E8FF3BCD55EE7101CDC3EE28289 /* Pods_PokerWebSocketTestUITests.framework */,
+				70CA9CF0DA75F3D85A166DC745BA44CE /* Starscream.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2DB920AFE2FA9A92B107E3C4C61C56D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB27C1E5B10E6297B8912667C6C243E2 /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FB6D2A189AD53535D35C03733A78F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB3929EE7B0630FD15A8D66FC2808C9F /* Pods-PokerWebSocketTestUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895A5CE8D15C36A1A7A2FFAD6770D6AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C14FE20AE64D3455C1F5BC0CFEE532 /* Pods-PokerWebSocketTestTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DB4B9A19837B980F1FA00043F93E09D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD8A65D48C18D67EF4A3A5B53147158 /* Pods-PokerWebSocketTest-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		124AEBA4751CB8333D0345FD9F4FC58D /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A58542E1B65FEECD063D0CB045891BC /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				26940DA21D67BF90EFE5AB6816D22DB3 /* Sources */,
+				F442047AF54837A8DDA7DB3C3D802273 /* Frameworks */,
+				2DB920AFE2FA9A92B107E3C4C61C56D9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 70CA9CF0DA75F3D85A166DC745BA44CE /* Starscream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9445334F7158AC88595E67F709AC3BF7 /* Pods-PokerWebSocketTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E63B16D30B9DE562165925D2DA2E1ED /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTestUITests" */;
+			buildPhases = (
+				839A0BE6BFEC85E18F4FC1E86A6CB904 /* Sources */,
+				BD70903F59E2171F1DFC0ADF99E9C90B /* Frameworks */,
+				53FB6D2A189AD53535D35C03733A78F7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PokerWebSocketTestUITests";
+			productName = "Pods-PokerWebSocketTestUITests";
+			productReference = 04D91E8FF3BCD55EE7101CDC3EE28289 /* Pods_PokerWebSocketTestUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9D96DAA98198104399711A54988073F3 /* Pods-PokerWebSocketTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF42CE4E57746E2723A28C16AB7A9D47 /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTest" */;
+			buildPhases = (
+				5F891BD2D6DEAC7771F67DDA253BD0A6 /* Sources */,
+				2CC031006CEE87A3663D105637DEFD73 /* Frameworks */,
+				8DB4B9A19837B980F1FA00043F93E09D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33795B8B8C329D82008E77AAF8C36FF4 /* PBXTargetDependency */,
+			);
+			name = "Pods-PokerWebSocketTest";
+			productName = "Pods-PokerWebSocketTest";
+			productReference = 341613BE42AF5FBA1CE77AC7AF7D8143 /* Pods_PokerWebSocketTest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CBEC702B76776A0C14F4535D251E4FEF /* Pods-PokerWebSocketTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CE6DDC05192098E49F630823BF6A4B8 /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTestTests" */;
+			buildPhases = (
+				5457DBD49D292B4396D27A753133BA2B /* Sources */,
+				362CA73EF8505C45930EEE3D768544D2 /* Frameworks */,
+				895A5CE8D15C36A1A7A2FFAD6770D6AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PokerWebSocketTestTests";
+			productName = "Pods-PokerWebSocketTestTests";
+			productReference = 2DA03655BC0B814AD9F4B4B3C6B3A109 /* Pods_PokerWebSocketTestTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CBE448F32BFBAEAA70A7591A56EA7CEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D96DAA98198104399711A54988073F3 /* Pods-PokerWebSocketTest */,
+				CBEC702B76776A0C14F4535D251E4FEF /* Pods-PokerWebSocketTestTests */,
+				9445334F7158AC88595E67F709AC3BF7 /* Pods-PokerWebSocketTestUITests */,
+				124AEBA4751CB8333D0345FD9F4FC58D /* Starscream */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26940DA21D67BF90EFE5AB6816D22DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE314566A4E41E832A420099BA3CB719 /* Compression.swift in Sources */,
+				E69FD7F3BB3DCF4D04ED72ED756D95D8 /* SSLSecurity.swift in Sources */,
+				2340E5C3F06495F8E2FA3DAB7BE683B0 /* Starscream-dummy.m in Sources */,
+				CDD0E4708F1B72FA50105FC43948D265 /* WebSocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5457DBD49D292B4396D27A753133BA2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA2813CDBBB635DA28A024B20A11E88 /* Pods-PokerWebSocketTestTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F891BD2D6DEAC7771F67DDA253BD0A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BB7B70F633EF822B62141578AF4950B /* Pods-PokerWebSocketTest-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		839A0BE6BFEC85E18F4FC1E86A6CB904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A1626B6298DA12C39B0FA7588CAF5 /* Pods-PokerWebSocketTestUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33795B8B8C329D82008E77AAF8C36FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 124AEBA4751CB8333D0345FD9F4FC58D /* Starscream */;
+			targetProxy = 7150DA062535682A85B86761A11A3ED5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AC5D9B8A3187B3D24490C1251B900F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8430670042A56A1986D7EE8581DFD0A6 /* Pods-PokerWebSocketTestTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTestTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTestTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		385EF8767D9FEBE0797ED90AD827EEDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0DC0C601479A9BA90713C43E6DEA6C1 /* Pods-PokerWebSocketTestUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTestUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTestUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		52A2EB78DE0BC4DF7CADB246D05762F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AA629D6E1A468195761849F1240303 /* Pods-PokerWebSocketTest.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTest/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5C5CA3E50C176B307D78787CA010A08A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D32A8747AB2FC03D9A37F9F24FDFE2F2 /* Pods-PokerWebSocketTestUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTestUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTestUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		656A8C27BBCB96A810D3202865F6A279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE09D2A20D152D20C709BE6656181C9 /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9FD7BBB9ABF9D63CB016A7223A4EF0E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE09D2A20D152D20C709BE6656181C9 /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2C32D8B3193A0A2A1BFAE9A8EAEC6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA83F951E78059453D9175F050F9466B /* Pods-PokerWebSocketTest.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTest/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B64E9F3A1193C02DE4793D0E85123D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9268032B700FCC7F3B152BECE5F6D0F /* Pods-PokerWebSocketTestTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PokerWebSocketTestTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PokerWebSocketTestTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E63B16D30B9DE562165925D2DA2E1ED /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C5CA3E50C176B307D78787CA010A08A /* Debug */,
+				385EF8767D9FEBE0797ED90AD827EEDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CE6DDC05192098E49F630823BF6A4B8 /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B64E9F3A1193C02DE4793D0E85123D53 /* Debug */,
+				0AC5D9B8A3187B3D24490C1251B900F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A58542E1B65FEECD063D0CB045891BC /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FD7BBB9ABF9D63CB016A7223A4EF0E8 /* Debug */,
+				656A8C27BBCB96A810D3202865F6A279 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF42CE4E57746E2723A28C16AB7A9D47 /* Build configuration list for PBXNativeTarget "Pods-PokerWebSocketTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2C32D8B3193A0A2A1BFAE9A8EAEC6F6 /* Debug */,
+				52A2EB78DE0BC4DF7CADB246D05762F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

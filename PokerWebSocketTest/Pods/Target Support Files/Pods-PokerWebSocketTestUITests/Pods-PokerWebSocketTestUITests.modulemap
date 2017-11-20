@@ -1,0 +1,6 @@
+framework module Pods_PokerWebSocketTestUITests {
+  umbrella header "Pods-PokerWebSocketTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
