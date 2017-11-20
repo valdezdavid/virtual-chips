@@ -39,6 +39,14 @@ public class Pot {
 		return sum;
 	}
 	
+	public int getPotSize() {
+		int sum = 0;
+		for (User u : chips.keySet()) {
+			sum += chips.get(u);		
+		}
+		return sum;
+	}
+	
 	
 	
 }

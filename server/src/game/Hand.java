@@ -25,6 +25,7 @@ public class Hand {
 		smallBlind.betBlind(game.getSmallBlind());
 		bigBlind.betBlind(currentBet);
 		game.resetFolded();
+		lastBetter = null;
 		requestMove();
 	}
 	
@@ -32,6 +33,7 @@ public class Hand {
 		System.out.println(currentBet);
 		pot.placeBet(u, amount);
 		currentBet = Math.max(u.getCurrentBet(), currentBet);
+		lastBetter = u;
 	}
 	
 	public void requestMove() {
@@ -43,6 +45,8 @@ public class Hand {
 				nextToMove = game.userAfter(dealer);
 				currentBet = 0;
 				round++;
+				game.resetCurrentBet();
+				requestMove();
 			}
 		}else {
 			if (lastBetter == null) {
@@ -74,6 +78,12 @@ public class Hand {
 				int maxRaise = nextToMove.getChips() - toCall;
 				moveOptionsResponse.addParam("maxRaise", maxRaise);
 				moveOptionsResponse.addParam("minRaise", game.getBigBlind() < maxRaise ? game.getBigBlind() : maxRaise);
+				if (currentBet == 0) {
+					moveOptionsResponse.addParam("canCall", false);
+				}else {
+					moveOptionsResponse.addParam("canCall", true);
+				}
+				moveOptionsResponse.addParam("potSize", pot.getPotSize());
 				moveOptionsResponse.send(nextToMove);
 			}
 		}
