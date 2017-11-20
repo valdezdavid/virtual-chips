@@ -16,6 +16,10 @@ public class User {
 	private String username;
 	private String userId;
 	private boolean authenticated = false;
+	private int currentBet = 0;
+	private int chips = 100;
+	
+	private boolean folded = false;
 	
 	
 	public User(Session session) {
@@ -79,19 +83,34 @@ public class User {
 		case "check":
 			check();
 			break;
+		case "fold":
+			fold();
+			break;
 		case "getGameInfo":
 			getGameInfo();
 			break;
 		}
 	}
 	
+	public int getCurrentBet() {
+		return currentBet;
+	}
+
+	public boolean canMakeMove() {
+		return chips > 0;
+	}
+	
+	public boolean isFolded() {
+		return folded;
+	}
+
 	private void login(String username, String password) {
 		// TODO check database
 		this.username = username;
 		authenticated = true;
 		Response r = new Response("login");
 		r.addParam("success", true);
-		r.send(session);
+		r.send(this);
 	}
 	
 	private void register(String username, String password) {
@@ -100,7 +119,7 @@ public class User {
 		authenticated = true;
 		Response r = new Response("register");
 		r.addParam("success", true);
-		r.send(session);
+		r.send(this);
 	}
 	
 	private void startGame() {
@@ -108,7 +127,7 @@ public class User {
 		Response r = new Response("startGame");
 		r.addParam("success", true);
 		r.addParam("id", currentGame.getId());
-		r.send(session);
+		r.send(this);
 	}
 	
 	private void joinGame(int id) {
@@ -129,12 +148,20 @@ public class User {
 				currentGame = null;
 			}
 		}
-		r.send(session);
+		r.send(this);
 		
 	}
 	
+	public int getChips() {
+		return chips;
+	}
+
+	public int getId() {
+		return id;
+	}
+
 	private void leaveGame() {
-		Response r = new Response("joinGame");
+		Response r = new Response("leaveGame");
 		if (currentGame == null) {
 			r.addParam("success", false);
 			r.addParam("error", "User is not in a game");
@@ -143,11 +170,22 @@ public class User {
 			currentGame = null;
 			r.addParam("success", true);
 		}
-		r.send(session);
+		r.send(this);
 	}
 	
-	private void bet(int amount) {
-		
+	public void bet(int amount) {
+		amount = Math.min(amount, chips);
+		currentBet += amount;
+		chips -= amount;
+		currentGame.getCurrentHand().placeBet(this, amount);		
+	}
+	
+	public void resetCurrentBet() {
+		currentBet = 0;
+	}
+	
+	public void resetFolded() {
+		folded = false;
 	}
 	
 	private void call() {
@@ -155,7 +193,15 @@ public class User {
 	}
 	
 	private void check() {
-		
+		currentGame.getCurrentHand().goToNextPlayer();
+	}
+	
+	private void fold() {
+		folded = true;
+		Response r = new Response("fold");
+		r.addParam("userId", id);
+		currentGame.getCurrentHand().goToNextPlayer();
+
 	}
 	
 	private void getGameInfo() {
