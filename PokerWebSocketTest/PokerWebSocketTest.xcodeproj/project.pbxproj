@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E7ABB11DC4E3907785EB63B /* Pods_PokerWebSocketTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2158783DFBE31DC142A0E9C /* Pods_PokerWebSocketTestTests.framework */; };
+		4225438FD8788A66AD78EEEA /* Pods_PokerWebSocketTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1605C7CCC4570DC9C4D5A03 /* Pods_PokerWebSocketTest.framework */; };
+		4E49A4101FBA9E5700AD9011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A40F1FBA9E5700AD9011 /* AppDelegate.swift */; };
+		4E49A4121FBA9E5700AD9011 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A4111FBA9E5700AD9011 /* ViewController.swift */; };
+		4E49A4151FBA9E5700AD9011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E49A4131FBA9E5700AD9011 /* Main.storyboard */; };
+		4E49A4171FBA9E5700AD9011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E49A4161FBA9E5700AD9011 /* Assets.xcassets */; };
+		4E49A41A1FBA9E5700AD9011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E49A4181FBA9E5700AD9011 /* LaunchScreen.storyboard */; };
+		E2A5B4520D63E0C13F3F2A7C /* Pods_PokerWebSocketTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0B88A7A01EDEC57B559340 /* Pods_PokerWebSocketTestUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E49A4211FBA9E5700AD9011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E49A4041FBA9E5700AD9011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E49A40B1FBA9E5700AD9011;
+			remoteInfo = PokerWebSocketTest;
+		};
+		4E49A42C1FBA9E5700AD9011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E49A4041FBA9E5700AD9011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E49A40B1FBA9E5700AD9011;
+			remoteInfo = PokerWebSocketTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AA663D064D8DA8CAE9696EA /* Pods-PokerWebSocketTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24638A6E59AA07A486857306 /* Pods-PokerWebSocketTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		334F0F9F3F2B7CC484B3BD61 /* Pods-PokerWebSocketTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E49A40C1FBA9E5700AD9011 /* PokerWebSocketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerWebSocketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E49A40F1FBA9E5700AD9011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E49A4111FBA9E5700AD9011 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E49A4141FBA9E5700AD9011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E49A4161FBA9E5700AD9011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E49A4191FBA9E5700AD9011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E49A41B1FBA9E5700AD9011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E49A4201FBA9E5700AD9011 /* PokerWebSocketTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerWebSocketTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E49A42B1FBA9E5700AD9011 /* PokerWebSocketTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerWebSocketTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0B88A7A01EDEC57B559340 /* Pods_PokerWebSocketTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerWebSocketTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14736E99436C868124D8C2A /* Pods-PokerWebSocketTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest.release.xcconfig"; sourceTree = "<group>"; };
+		A1605C7CCC4570DC9C4D5A03 /* Pods_PokerWebSocketTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerWebSocketTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC31AD211A2922F84C8FFD6 /* Pods-PokerWebSocketTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD3826F172742671016B34CB /* Pods-PokerWebSocketTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerWebSocketTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E2158783DFBE31DC142A0E9C /* Pods_PokerWebSocketTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerWebSocketTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E49A4091FBA9E5700AD9011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4225438FD8788A66AD78EEEA /* Pods_PokerWebSocketTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A41D1FBA9E5700AD9011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7ABB11DC4E3907785EB63B /* Pods_PokerWebSocketTestTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A4281FBA9E5700AD9011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A5B4520D63E0C13F3F2A7C /* Pods_PokerWebSocketTestUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E49A4031FBA9E5700AD9011 = {
+			isa = PBXGroup;
+			children = (
+				4E49A40E1FBA9E5700AD9011 /* PokerWebSocketTest */,
+				4E49A40D1FBA9E5700AD9011 /* Products */,
+				FBCDACB180BFA5C189D28243 /* Pods */,
+				8CFAD07CF4CFC01C816C26D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E49A40D1FBA9E5700AD9011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E49A40C1FBA9E5700AD9011 /* PokerWebSocketTest.app */,
+				4E49A4201FBA9E5700AD9011 /* PokerWebSocketTestTests.xctest */,
+				4E49A42B1FBA9E5700AD9011 /* PokerWebSocketTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E49A40E1FBA9E5700AD9011 /* PokerWebSocketTest */ = {
+			isa = PBXGroup;
+			children = (
+				4E49A40F1FBA9E5700AD9011 /* AppDelegate.swift */,
+				4E49A4111FBA9E5700AD9011 /* ViewController.swift */,
+				4E49A4131FBA9E5700AD9011 /* Main.storyboard */,
+				4E49A4161FBA9E5700AD9011 /* Assets.xcassets */,
+				4E49A4181FBA9E5700AD9011 /* LaunchScreen.storyboard */,
+				4E49A41B1FBA9E5700AD9011 /* Info.plist */,
+			);
+			path = PokerWebSocketTest;
+			sourceTree = "<group>";
+		};
+		8CFAD07CF4CFC01C816C26D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1605C7CCC4570DC9C4D5A03 /* Pods_PokerWebSocketTest.framework */,
+				E2158783DFBE31DC142A0E9C /* Pods_PokerWebSocketTestTests.framework */,
+				9C0B88A7A01EDEC57B559340 /* Pods_PokerWebSocketTestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBCDACB180BFA5C189D28243 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD3826F172742671016B34CB /* Pods-PokerWebSocketTest.debug.xcconfig */,
+				A14736E99436C868124D8C2A /* Pods-PokerWebSocketTest.release.xcconfig */,
+				334F0F9F3F2B7CC484B3BD61 /* Pods-PokerWebSocketTestTests.debug.xcconfig */,
+				AAC31AD211A2922F84C8FFD6 /* Pods-PokerWebSocketTestTests.release.xcconfig */,
+				0AA663D064D8DA8CAE9696EA /* Pods-PokerWebSocketTestUITests.debug.xcconfig */,
+				24638A6E59AA07A486857306 /* Pods-PokerWebSocketTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E49A40B1FBA9E5700AD9011 /* PokerWebSocketTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E49A4341FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTest" */;
+			buildPhases = (
+				56AF5488E223FE6F692B7CDF /* [CP] Check Pods Manifest.lock */,
+				4E49A4081FBA9E5700AD9011 /* Sources */,
+				4E49A4091FBA9E5700AD9011 /* Frameworks */,
+				4E49A40A1FBA9E5700AD9011 /* Resources */,
+				98DB35F6EF7434777268FC4B /* [CP] Embed Pods Frameworks */,
+				02CE74B028F527ECEE420877 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokerWebSocketTest;
+			productName = PokerWebSocketTest;
+			productReference = 4E49A40C1FBA9E5700AD9011 /* PokerWebSocketTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E49A41F1FBA9E5700AD9011 /* PokerWebSocketTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E49A4371FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTestTests" */;
+			buildPhases = (
+				0DBF2AFC7EE187834BEB700D /* [CP] Check Pods Manifest.lock */,
+				4E49A41C1FBA9E5700AD9011 /* Sources */,
+				4E49A41D1FBA9E5700AD9011 /* Frameworks */,
+				4E49A41E1FBA9E5700AD9011 /* Resources */,
+				AC9A02A3A5252A564FE29842 /* [CP] Embed Pods Frameworks */,
+				AB7FBEF6EC8B12B21D9A264F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E49A4221FBA9E5700AD9011 /* PBXTargetDependency */,
+			);
+			name = PokerWebSocketTestTests;
+			productName = PokerWebSocketTestTests;
+			productReference = 4E49A4201FBA9E5700AD9011 /* PokerWebSocketTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E49A42A1FBA9E5700AD9011 /* PokerWebSocketTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E49A43A1FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTestUITests" */;
+			buildPhases = (
+				E2FCD87D9D447956E6562F97 /* [CP] Check Pods Manifest.lock */,
+				4E49A4271FBA9E5700AD9011 /* Sources */,
+				4E49A4281FBA9E5700AD9011 /* Frameworks */,
+				4E49A4291FBA9E5700AD9011 /* Resources */,
+				E5DCC8399B3DDB1B6D1FB50D /* [CP] Embed Pods Frameworks */,
+				984BC4061B70CA4C4F351CA6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E49A42D1FBA9E5700AD9011 /* PBXTargetDependency */,
+			);
+			name = PokerWebSocketTestUITests;
+			productName = PokerWebSocketTestUITests;
+			productReference = 4E49A42B1FBA9E5700AD9011 /* PokerWebSocketTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E49A4041FBA9E5700AD9011 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Anubhav Garg";
+				TargetAttributes = {
+					4E49A40B1FBA9E5700AD9011 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = C4VVFXZ2B8;
+						ProvisioningStyle = Automatic;
+					};
+					4E49A41F1FBA9E5700AD9011 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E49A40B1FBA9E5700AD9011;
+					};
+					4E49A42A1FBA9E5700AD9011 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E49A40B1FBA9E5700AD9011;
+					};
+				};
+			};
+			buildConfigurationList = 4E49A4071FBA9E5700AD9011 /* Build configuration list for PBXProject "PokerWebSocketTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E49A4031FBA9E5700AD9011;
+			productRefGroup = 4E49A40D1FBA9E5700AD9011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E49A40B1FBA9E5700AD9011 /* PokerWebSocketTest */,
+				4E49A41F1FBA9E5700AD9011 /* PokerWebSocketTestTests */,
+				4E49A42A1FBA9E5700AD9011 /* PokerWebSocketTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E49A40A1FBA9E5700AD9011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E49A41A1FBA9E5700AD9011 /* LaunchScreen.storyboard in Resources */,
+				4E49A4171FBA9E5700AD9011 /* Assets.xcassets in Resources */,
+				4E49A4151FBA9E5700AD9011 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A41E1FBA9E5700AD9011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A4291FBA9E5700AD9011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02CE74B028F527ECEE420877 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DBF2AFC7EE187834BEB700D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56AF5488E223FE6F692B7CDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		984BC4061B70CA4C4F351CA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98DB35F6EF7434777268FC4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTest/Pods-PokerWebSocketTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7FBEF6EC8B12B21D9A264F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9A02A3A5252A564FE29842 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTestTests/Pods-PokerWebSocketTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2FCD87D9D447956E6562F97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5DCC8399B3DDB1B6D1FB50D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerWebSocketTestUITests/Pods-PokerWebSocketTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E49A4081FBA9E5700AD9011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E49A4121FBA9E5700AD9011 /* ViewController.swift in Sources */,
+				4E49A4101FBA9E5700AD9011 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A41C1FBA9E5700AD9011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E49A4271FBA9E5700AD9011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E49A4221FBA9E5700AD9011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E49A40B1FBA9E5700AD9011 /* PokerWebSocketTest */;
+			targetProxy = 4E49A4211FBA9E5700AD9011 /* PBXContainerItemProxy */;
+		};
+		4E49A42D1FBA9E5700AD9011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E49A40B1FBA9E5700AD9011 /* PokerWebSocketTest */;
+			targetProxy = 4E49A42C1FBA9E5700AD9011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E49A4131FBA9E5700AD9011 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E49A4141FBA9E5700AD9011 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E49A4181FBA9E5700AD9011 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E49A4191FBA9E5700AD9011 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E49A4321FBA9E5700AD9011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E49A4331FBA9E5700AD9011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E49A4351FBA9E5700AD9011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD3826F172742671016B34CB /* Pods-PokerWebSocketTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C4VVFXZ2B8;
+				INFOPLIST_FILE = PokerWebSocketTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4E49A4361FBA9E5700AD9011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A14736E99436C868124D8C2A /* Pods-PokerWebSocketTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C4VVFXZ2B8;
+				INFOPLIST_FILE = PokerWebSocketTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4E49A4381FBA9E5700AD9011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334F0F9F3F2B7CC484B3BD61 /* Pods-PokerWebSocketTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PokerWebSocketTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerWebSocketTest.app/PokerWebSocketTest";
+			};
+			name = Debug;
+		};
+		4E49A4391FBA9E5700AD9011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAC31AD211A2922F84C8FFD6 /* Pods-PokerWebSocketTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PokerWebSocketTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerWebSocketTest.app/PokerWebSocketTest";
+			};
+			name = Release;
+		};
+		4E49A43B1FBA9E5700AD9011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AA663D064D8DA8CAE9696EA /* Pods-PokerWebSocketTestUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PokerWebSocketTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PokerWebSocketTest;
+			};
+			name = Debug;
+		};
+		4E49A43C1FBA9E5700AD9011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24638A6E59AA07A486857306 /* Pods-PokerWebSocketTestUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PokerWebSocketTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anubhavgarg.PokerWebSocketTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PokerWebSocketTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E49A4071FBA9E5700AD9011 /* Build configuration list for PBXProject "PokerWebSocketTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E49A4321FBA9E5700AD9011 /* Debug */,
+				4E49A4331FBA9E5700AD9011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E49A4341FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E49A4351FBA9E5700AD9011 /* Debug */,
+				4E49A4361FBA9E5700AD9011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E49A4371FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E49A4381FBA9E5700AD9011 /* Debug */,
+				4E49A4391FBA9E5700AD9011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E49A43A1FBA9E5700AD9011 /* Build configuration list for PBXNativeTarget "PokerWebSocketTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E49A43B1FBA9E5700AD9011 /* Debug */,
+				4E49A43C1FBA9E5700AD9011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E49A4041FBA9E5700AD9011 /* Project object */;
+}
