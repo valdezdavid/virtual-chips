@@ -17,7 +17,7 @@ import Starscream
 
 class LoginViewController: UIViewController {
     //Declares Login Segue as Constant
-    private let LOGIN_GAMEHUB_SEGUE = "loginGameHubSegue";
+    let LOGIN_GAMEHUB_SEGUE = "loginGameHubSegue";
     
     @IBOutlet weak var usernameText: UITextField!
     
@@ -71,6 +71,13 @@ class LoginViewController: UIViewController {
 } //Class
 
 extension LoginViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         

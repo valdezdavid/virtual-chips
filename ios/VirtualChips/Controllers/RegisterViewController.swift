@@ -11,7 +11,7 @@ import Starscream
 class RegisterViewController: UIViewController {
 
     //Declares Register Segue as Constant (Register -> GameHub)
-    private let REGISTER_GAMEHUB_SEGUE = "registerGameHubSegue";
+    let REGISTER_GAMEHUB_SEGUE = "registerGameHubSegue";
     
     
     @IBOutlet weak var usernameField: UITextField!
@@ -65,6 +65,14 @@ ServerConnect.socket?.delegate = self
 } //CLASS
 
 extension RegisterViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+    
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+    
+    }
+    
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         
