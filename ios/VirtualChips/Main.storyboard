@@ -528,6 +528,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="818-W1-cke">
+                                <rect key="frame" x="272" y="231" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="AOc-lH-wAI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="JBR-2U-6er"/>
@@ -540,7 +548,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create Game" id="hew-Ru-Iqr">
                             <connections>
-                                <segue destination="KF0-0R-IWp" kind="presentation" identifier="newCodeSegue" id="hV8-DL-Ejq"/>
+                                <action selector="createClicked:" destination="PTr-WJ-BfM" id="P88-n8-Y9w"/>
+                                <segue destination="KF0-0R-IWp" kind="presentation" identifier="newCodeSegue" id="iNf-HG-jo4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
