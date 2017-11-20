@@ -75,9 +75,6 @@ public class Game {
 			Response r = new Response("userJoined");
 			r.addParam("user", user);
 			r.send(host);
-			if (users.size() == numUsers) {
-				startGame();
-			}
 			return true;
 		}
 	}
@@ -90,7 +87,10 @@ public class Game {
 	
 	public void startGame() {
 		dealer = host;
-		currentHand = new Hand(this, dealer);
+		if (users.size() == numUsers) {
+			currentHand = new Hand(this, dealer);
+			currentHand.startHand();
+		}
 	}
 	
 	public void destroyGame() {

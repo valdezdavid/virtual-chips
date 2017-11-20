@@ -77,17 +77,11 @@ public class User {
 		case "bet":
 			bet((int)params.get("amount"));
 			break;
-		case "call":
-			call();
-			break;
 		case "check":
 			check();
 			break;
 		case "fold":
 			fold();
-			break;
-		case "getGameInfo":
-			getGameInfo();
 			break;
 		}
 	}
@@ -149,7 +143,9 @@ public class User {
 			}
 		}
 		r.send(this);
-		
+		if (currentGame != null) {
+			currentGame.startGame();
+		}
 	}
 	
 	public int getChips() {
@@ -174,10 +170,14 @@ public class User {
 	}
 	
 	public void bet(int amount) {
+		System.out.println("hello1");
 		amount = Math.min(amount, chips);
+		System.out.println("hello2");
 		currentBet += amount;
 		chips -= amount;
+		System.out.println(currentGame.getCurrentHand());
 		currentGame.getCurrentHand().placeBet(this, amount);		
+		System.out.println("hello4");
 	}
 	
 	public void resetCurrentBet() {
@@ -187,11 +187,7 @@ public class User {
 	public void resetFolded() {
 		folded = false;
 	}
-	
-	private void call() {
-		
-	}
-	
+
 	private void check() {
 		currentGame.getCurrentHand().goToNextPlayer();
 	}
@@ -203,17 +199,13 @@ public class User {
 		currentGame.getCurrentHand().goToNextPlayer();
 
 	}
-	
-	private void getGameInfo() {
-		
-	}
-	
-	public void disconnect() {
-		
-	}
 
 	public Session getSession() {
 		return session;
+	}
+	
+	public String toString() {
+		return String.valueOf(id);
 	}
 	
 }

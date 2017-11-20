@@ -22,6 +22,12 @@
 				document.chatform.message.value = "";
 				return false;
 			}
+			function startGame(){
+				socket.send('{"command":"startGame"}');
+			}
+			function joinGame(){
+				socket.send('{"command":"joinGame", "params": {"id": '+document.getElementById("gameId").value+'}}');
+			}
 		</script>
 	</head>
 	<body onload="connectToServer()">
@@ -29,7 +35,10 @@
 			<input type="text" name="message" value=""/><br/>
 			<input type="submit" name="submit" value="Send Message"/>
 			</form>
-			<br/>
-			<div id="mychat"></div>
+		<br/>
+		<button onclick="startGame()">Start Game</button><br/>
+		<input type="text" id="gameId" />
+		<button onclick="joinGame()">Join Game</button>
+		<div id="mychat"></div>
 	</body>
 </html>

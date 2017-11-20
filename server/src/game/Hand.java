@@ -13,11 +13,14 @@ public class Hand {
 	
 	public Hand(Game game, User dealer) {
 		this.dealer = dealer;
+		this.game = game;
+	}
+	
+	public void startHand() {
 		game.resetCurrentBet();
 		User smallBlind = game.userAfter(dealer);
 		User bigBlind = game.userAfter(smallBlind);
 		nextToMove = game.userAfter(bigBlind);
-		this.game = game;
 		currentBet = game.getBigBlind();
 		smallBlind.bet(game.getSmallBlind());
 		bigBlind.bet(currentBet);
@@ -26,7 +29,9 @@ public class Hand {
 	}
 	
 	public void placeBet(User u, int amount) {
+		System.out.println("Hello");
 		pot.placeBet(u, amount);
+		currentBet = Math.max(amount, u.getCurrentBet());
 	}
 	
 	public void requestMove() {
@@ -60,7 +65,7 @@ public class Hand {
 					moveOptionsResponse.addParam("canCheck", true);
 				}
 				int toCall = currentBet - nextToMove.getCurrentBet();
-				moveOptionsResponse.addParam("callAmount", toCall);
+				moveOptionsResponse.addParam("callAmount", Math.min(toCall, nextToMove.getChips()));
 				if (toCall < nextToMove.getChips()) {
 					moveOptionsResponse.addParam("canRaise", true);
 				}else {
@@ -69,17 +74,14 @@ public class Hand {
 				int maxRaise = nextToMove.getChips() - toCall;
 				moveOptionsResponse.addParam("maxRaise", maxRaise);
 				moveOptionsResponse.addParam("minRaise", game.getBigBlind() < maxRaise ? game.getBigBlind() : maxRaise);
+				moveOptionsResponse.send(nextToMove);
 			}
 		}
 	}
 	
 	
 	public void finishHand() {
-		
-	}
-	
-	public void call() {
-		
+		System.out.println("Round is over");
 	}
 	
 	public void goToNextPlayer() {
