@@ -5,7 +5,7 @@
 //  Created by David Valdez on 11/16/17.
 //  Copyright © 2017 company. All rights reserved.
 //
-
+//Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 import UIKit
 import Starscream
 class EndGameViewController: UIViewController {
