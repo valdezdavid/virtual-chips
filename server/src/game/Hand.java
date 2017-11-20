@@ -43,10 +43,20 @@ public class Hand {
 		lastBetter = u;
 	}
 	
+	public boolean isRoundOver() {
+		User next = game.userAfter(nextToMove);
+		while (next.isFolded()) {
+			next = game.userAfter(next);
+		}
+		return nextToMove == next;
+	}
+	
 	
 	public void requestMove() {
-		if (lastBetter == nextToMove) {
-			if (round == 3 || nextToMove == game.userAfter(nextToMove)) {
+		if (isRoundOver()) {
+			finishHand();
+		}else if (lastBetter == nextToMove) {
+			if (round == 3) {
 				finishHand();
 			}else {
 				lastBetter = null;
