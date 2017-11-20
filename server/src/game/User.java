@@ -66,14 +66,14 @@ public class User {
 			register(params.get("username").toString(), params.get("password").toString());
 			break;
 		case "startGame":
-			int buyIn = ((Double)params.get("buyIn")).intValue();
-			int smallBlind = ((Double)params.get("smallBlind")).intValue();
-			int bigBlind = ((Double)params.get("bigBlind")).intValue();
-			int numPlayers = ((Double)params.get("numPlayers")).intValue();
+			int buyIn = Integer.valueOf((String)params.get("buyIn"));
+			int smallBlind = Integer.valueOf((String)params.get("smallBlind"));
+			int bigBlind = Integer.valueOf((String)params.get("bigBlind"));
+			int numPlayers = Integer.valueOf((String)params.get("numPlayers"));
 			startGame(buyIn, smallBlind, bigBlind, numPlayers);
 			break;
 		case "joinGame":
-			int id = ((Double)params.get("id")).intValue();
+			int id = Integer.valueOf((String)params.get("id"));
 			joinGame(id);
 			break;
 		case "leaveGame":
