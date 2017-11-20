@@ -42,6 +42,6 @@ public class ServerSocket {
 	
 	@OnError
 	public void onError(Throwable error) {
-		System.out.println("Error! " + error.getMessage());
+		System.out.println("ServerSocket Error: " + error);
 	}
 }

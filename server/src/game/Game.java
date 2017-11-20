@@ -15,9 +15,9 @@ public class Game {
 	private List<User> users = new ArrayList<User>();
 	
 	//Game settings
-	private int smallBlind = 5;
-
-	private int bigBlind = 10;
+	private int buyIn = 0;
+	private int smallBlind = 0;
+	private int bigBlind = 0;
 	private int numUsers = 2;
 	
 	
@@ -31,9 +31,14 @@ public class Game {
 	}
 
 
-	public Game(User host) {
+	public Game(User host, int buyIn, int smallBlind, int bigBlind, int numPlayers) {
 		this.host = host;
+		this.buyIn = buyIn;
+		this.smallBlind = smallBlind;
+		this.bigBlind = bigBlind;
+		this.numUsers = numPlayers;
 		users.add(host);
+		host.setChips(buyIn);
 		// create random ID for user
 		id = (int)(Math.random()*Integer.MAX_VALUE);
 		
@@ -72,12 +77,10 @@ public class Game {
 			return false;
 		}else {
 			users.add(user);
+			user.setChips(buyIn);
 			Response r = new Response("userJoined");
-			r.addParam("user", user);
+			r.addParam("userId", user.getId());
 			r.send(host);
-			if (users.size() == numUsers) {
-				startGame();
-			}
 			return true;
 		}
 	}
@@ -90,7 +93,10 @@ public class Game {
 	
 	public void startGame() {
 		dealer = host;
-		currentHand = new Hand(this, dealer);
+		if (users.size() == numUsers) {
+			currentHand = new Hand(this, dealer);
+			currentHand.startHand();
+		}
 	}
 	
 	public void destroyGame() {

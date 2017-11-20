@@ -66,28 +66,27 @@ public class User {
 			register(params.get("username").toString(), params.get("password").toString());
 			break;
 		case "startGame":
-			startGame();
+			int buyIn = Integer.valueOf((String)params.get("buyIn"));
+			int smallBlind = Integer.valueOf((String)params.get("smallBlind"));
+			int bigBlind = Integer.valueOf((String)params.get("bigBlind"));
+			int numPlayers = Integer.valueOf((String)params.get("numPlayers"));
+			startGame(buyIn, smallBlind, bigBlind, numPlayers);
 			break;
 		case "joinGame":
-			joinGame(((Double)params.get("id")).intValue());
+			int id = Integer.valueOf((String)params.get("id"));
+			joinGame(id);
 			break;
 		case "leaveGame":
 			leaveGame();
 			break;
 		case "bet":
-			bet((int)params.get("amount"));
-			break;
-		case "call":
-			call();
+			bet(Integer.valueOf((String)params.get("amount")));
 			break;
 		case "check":
 			check();
 			break;
 		case "fold":
 			fold();
-			break;
-		case "getGameInfo":
-			getGameInfo();
 			break;
 		}
 	}
@@ -122,8 +121,8 @@ public class User {
 		r.send(this);
 	}
 	
-	private void startGame() {
-		currentGame = new Game(this);
+	private void startGame(int buyIn, int smallBlind, int bigBlind, int numPlayers) {
+		currentGame = new Game(this, buyIn, smallBlind, bigBlind, numPlayers);
 		Response r = new Response("startGame");
 		r.addParam("success", true);
 		r.addParam("id", currentGame.getId());
@@ -149,11 +148,18 @@ public class User {
 			}
 		}
 		r.send(this);
-		
+		if (currentGame != null) {
+			currentGame.startGame();
+		}
 	}
 	
 	public int getChips() {
 		return chips;
+	}
+	
+
+	public void setChips(int chips) {
+		this.chips = chips;
 	}
 
 	public int getId() {
@@ -177,7 +183,18 @@ public class User {
 		amount = Math.min(amount, chips);
 		currentBet += amount;
 		chips -= amount;
-		currentGame.getCurrentHand().placeBet(this, amount);		
+		currentGame.getCurrentHand().placeBet(this, amount);	
+		Response r = new Response("bet");
+		r.addParam("userId", id);
+		r.addParam("amount", amount);
+		currentGame.sendResponseToAll(r);
+		currentGame.getCurrentHand().goToNextPlayer();
+	}
+	public void betBlind(int amount) {
+		amount = Math.min(amount, chips);
+		currentBet += amount;
+		chips -= amount;
+		currentGame.getCurrentHand().placeBet(this, amount);	
 	}
 	
 	public void resetCurrentBet() {
@@ -187,12 +204,11 @@ public class User {
 	public void resetFolded() {
 		folded = false;
 	}
-	
-	private void call() {
-		
-	}
-	
+
 	private void check() {
+		Response r = new Response("check");
+		r.addParam("userId", id);
+		currentGame.sendResponseToAll(r);
 		currentGame.getCurrentHand().goToNextPlayer();
 	}
 	
@@ -200,20 +216,17 @@ public class User {
 		folded = true;
 		Response r = new Response("fold");
 		r.addParam("userId", id);
+		currentGame.sendResponseToAll(r);
 		currentGame.getCurrentHand().goToNextPlayer();
 
-	}
-	
-	private void getGameInfo() {
-		
-	}
-	
-	public void disconnect() {
-		
 	}
 
 	public Session getSession() {
 		return session;
+	}
+	
+	public String toString() {
+		return String.valueOf(id);
 	}
 	
 }

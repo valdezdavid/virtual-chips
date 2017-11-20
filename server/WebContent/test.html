@@ -22,6 +22,21 @@
 				document.chatform.message.value = "";
 				return false;
 			}
+			function startGame(){
+				socket.send('{"command":"startGame", "params": {"buyIn": "100", "smallBlind": "5", "bigBlind": "10", "numPlayers": "3"}}');
+			}
+			function joinGame(){
+				socket.send('{"command":"joinGame", "params": {"id": "'+document.getElementById("gameId").value+'"}}');
+			}
+			function bet(){
+				socket.send('{"command":"bet", "params": {"amount": "'+document.getElementById("betAmnt").value+'"}}');
+			}
+			function check(){
+				socket.send('{"command":"check"}');
+			}
+			function fold(){
+				socket.send('{"command":"fold"}');
+			}
 		</script>
 	</head>
 	<body onload="connectToServer()">
@@ -29,7 +44,18 @@
 			<input type="text" name="message" value=""/><br/>
 			<input type="submit" name="submit" value="Send Message"/>
 			</form>
-			<br/>
-			<div id="mychat"></div>
+		<br/>
+		<button onclick="startGame()">Start Game</button><br/>
+		
+		<input type="text" id="gameId" />
+		<button onclick="joinGame()">Join Game</button><br/>
+		
+		<input type="text" id="betAmnt" />
+		<button onclick="bet()">Bet</button><br/>
+		
+		<button onclick="check()">Check</button><br/>
+		
+		<button onclick="fold()">Fold</button>
+		<div id="mychat"></div>
 	</body>
 </html>
