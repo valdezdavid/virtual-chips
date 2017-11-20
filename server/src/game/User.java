@@ -66,10 +66,15 @@ public class User {
 			register(params.get("username").toString(), params.get("password").toString());
 			break;
 		case "startGame":
-			startGame();
+			int buyIn = ((Double)params.get("buyIn")).intValue();
+			int smallBlind = ((Double)params.get("smallBlind")).intValue();
+			int bigBlind = ((Double)params.get("bigBlind")).intValue();
+			int numPlayers = ((Double)params.get("numPlayers")).intValue();
+			startGame(buyIn, smallBlind, bigBlind, numPlayers);
 			break;
 		case "joinGame":
-			joinGame(((Double)params.get("id")).intValue());
+			int id = ((Double)params.get("id")).intValue();
+			joinGame(id);
 			break;
 		case "leaveGame":
 			leaveGame();
@@ -116,8 +121,8 @@ public class User {
 		r.send(this);
 	}
 	
-	private void startGame() {
-		currentGame = new Game(this);
+	private void startGame(int buyIn, int smallBlind, int bigBlind, int numPlayers) {
+		currentGame = new Game(this, buyIn, smallBlind, bigBlind, numPlayers);
 		Response r = new Response("startGame");
 		r.addParam("success", true);
 		r.addParam("id", currentGame.getId());
@@ -151,6 +156,11 @@ public class User {
 	public int getChips() {
 		return chips;
 	}
+	
+
+	public void setChips(int chips) {
+		this.chips = chips;
+	}
 
 	public int getId() {
 		return id;
@@ -170,14 +180,10 @@ public class User {
 	}
 	
 	public void bet(int amount) {
-		System.out.println("hello1");
 		amount = Math.min(amount, chips);
-		System.out.println("hello2");
 		currentBet += amount;
 		chips -= amount;
-		System.out.println(currentGame.getCurrentHand());
 		currentGame.getCurrentHand().placeBet(this, amount);		
-		System.out.println("hello4");
 	}
 	
 	public void resetCurrentBet() {

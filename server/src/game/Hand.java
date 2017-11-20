@@ -29,9 +29,9 @@ public class Hand {
 	}
 	
 	public void placeBet(User u, int amount) {
-		System.out.println("Hello");
+		System.out.println(currentBet);
 		pot.placeBet(u, amount);
-		currentBet = Math.max(amount, u.getCurrentBet());
+		currentBet = Math.max(amount, currentBet);
 	}
 	
 	public void requestMove() {
