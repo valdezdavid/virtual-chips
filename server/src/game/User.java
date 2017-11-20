@@ -80,7 +80,7 @@ public class User {
 			leaveGame();
 			break;
 		case "bet":
-			bet((int)params.get("amount"));
+			bet(Integer.valueOf((String)params.get("amount")));
 			break;
 		case "check":
 			check();
@@ -183,7 +183,18 @@ public class User {
 		amount = Math.min(amount, chips);
 		currentBet += amount;
 		chips -= amount;
-		currentGame.getCurrentHand().placeBet(this, amount);		
+		currentGame.getCurrentHand().placeBet(this, amount);	
+		Response r = new Response("bet");
+		r.addParam("userId", id);
+		r.addParam("amount", amount);
+		currentGame.sendResponseToAll(r);
+		currentGame.getCurrentHand().goToNextPlayer();
+	}
+	public void betBlind(int amount) {
+		amount = Math.min(amount, chips);
+		currentBet += amount;
+		chips -= amount;
+		currentGame.getCurrentHand().placeBet(this, amount);	
 	}
 	
 	public void resetCurrentBet() {
@@ -195,6 +206,9 @@ public class User {
 	}
 
 	private void check() {
+		Response r = new Response("check");
+		r.addParam("userId", id);
+		currentGame.sendResponseToAll(r);
 		currentGame.getCurrentHand().goToNextPlayer();
 	}
 	
@@ -202,6 +216,7 @@ public class User {
 		folded = true;
 		Response r = new Response("fold");
 		r.addParam("userId", id);
+		currentGame.sendResponseToAll(r);
 		currentGame.getCurrentHand().goToNextPlayer();
 
 	}

@@ -22,8 +22,8 @@ public class Hand {
 		User bigBlind = game.userAfter(smallBlind);
 		nextToMove = game.userAfter(bigBlind);
 		currentBet = game.getBigBlind();
-		smallBlind.bet(game.getSmallBlind());
-		bigBlind.bet(currentBet);
+		smallBlind.betBlind(game.getSmallBlind());
+		bigBlind.betBlind(currentBet);
 		game.resetFolded();
 		requestMove();
 	}
