@@ -1,0 +1,6 @@
+framework module Pods_VirtualChipsTests {
+  umbrella header "Pods-VirtualChipsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
