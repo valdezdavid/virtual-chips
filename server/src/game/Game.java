@@ -79,7 +79,7 @@ public class Game {
 			users.add(user);
 			user.setChips(buyIn);
 			Response r = new Response("userJoined");
-			r.addParam("user", user);
+			r.addParam("userId", user.getId());
 			r.send(host);
 			return true;
 		}

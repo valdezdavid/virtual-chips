@@ -31,7 +31,7 @@ public class Hand {
 	public void placeBet(User u, int amount) {
 		System.out.println(currentBet);
 		pot.placeBet(u, amount);
-		currentBet = Math.max(amount, currentBet);
+		currentBet = Math.max(u.getCurrentBet(), currentBet);
 	}
 	
 	public void requestMove() {
