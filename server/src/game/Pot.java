@@ -1,7 +1,11 @@
 package game;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+
+import server.Response;
 
 public class Pot {
 
@@ -20,9 +24,23 @@ public class Pot {
 		return chips.isEmpty();
 	}
 	
-	public int redeem(User user) {
+	public void checkRedeem() {
+		User lastUser = null;
+		for (User u : chips.keySet()) {
+			if (!u.isFolded()) {
+				if (lastUser == null) {
+					lastUser = u;
+				}else {
+					return;
+				}
+			}		
+		}
+		redeem(lastUser);
+	}
+	
+	public void redeem(User user) {
 		if (!chips.containsKey(user)) {
-			return 0;
+			return;
 		}
 		int max = chips.get(user);
 		int sum = 0;
@@ -36,7 +54,11 @@ public class Pot {
 				chips.put(u, userChips-amount);
 			}			
 		}
-		return sum;
+		user.setChips(user.getChips()+sum);
+		Response r = new Response("win");
+		r.addParam("userId", user.getId());
+		r.addParam("amount", sum);
+		user.getCurrentGame().sendResponseToAll(r);
 	}
 	
 	public int getPotSize() {
@@ -45,6 +67,17 @@ public class Pot {
 			sum += chips.get(u);		
 		}
 		return sum;
+	}
+	
+	public Set<User> getUsersInPot(){
+		Set<User> users = new HashSet<User>();
+		for (User u : chips.keySet()) {
+			if (!u.isFolded()) {
+				users.add(u);
+			}		
+		}
+		
+		return users;
 	}
 	
 	

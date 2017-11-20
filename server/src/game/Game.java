@@ -31,6 +31,11 @@ public class Game {
 	}
 
 
+	public User getHost() {
+		return host;
+	}
+
+
 	public Game(User host, int buyIn, int smallBlind, int bigBlind, int numPlayers) {
 		this.host = host;
 		this.buyIn = buyIn;
