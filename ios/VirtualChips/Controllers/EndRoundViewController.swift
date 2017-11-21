@@ -8,14 +8,16 @@
 
 import UIKit
 import Starscream
-class EndRoundViewController: UIViewController {
+class EndRoundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     //Player set (using Player class in Models)
-    var playersSet : [Player] = []
+    //var playersSet : [Player] = []
+    var playersArray: [Int]!
     
     var numUsers = 0;
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,19 @@ class EndRoundViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Table View
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        playersArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPlayer", for: indexPath)
+        let player = playersArray[indexPath.row]
+        cell.textLabel?.text =
     }
 
 }
@@ -59,9 +74,11 @@ extension EndRoundViewController : WebSocketDelegate {
             //Check if there is atleast 1 player
             if(Int(receivedMessage.params["numUsers"]!)! > 0){
                 numUsers = Int (receivedMessage.params["numUsers"]!)!
-                //Save set param
-                for i in 0..<numUsers {
-                    
+                
+                var counter = 0
+                while counter <= numUsers{
+                    playersArray.append(Int (receivedMessage.params[String (counter + 1)]!)!)
+                    counter += 1
                 }
                 
             }
