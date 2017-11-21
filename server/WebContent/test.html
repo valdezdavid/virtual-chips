@@ -24,7 +24,7 @@
 				return false;
 			}
 			function startGame(){
-				socket.send('{"command":"startGame", "params": {"buyIn": "100", "smallBlind": "5", "bigBlind": "10", "numPlayers": "3"}}');
+				socket.send('{"command":"startGame", "params": {"buyIn": "250", "smallBlind": "5", "bigBlind": "10", "numPlayers": "2"}}');
 			}
 			function joinGame(){
 				socket.send('{"command":"joinGame", "params": {"id": "'+document.getElementById("gameId").value+'"}}');

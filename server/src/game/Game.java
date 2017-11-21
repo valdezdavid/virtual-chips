@@ -101,7 +101,6 @@ public class Game {
 		dealer = host;
 		if (users.size() == numUsers) {
 			Response r = new Response("beginGame");
-			sendResponseToAll(r);
 			r.addParam("numPlayers", users.size());
 			int i = 1;
 			for (User u : users) {
@@ -109,6 +108,8 @@ public class Game {
 				r.addParam("username" + i, u.getUsername());
 				i++;
 			}
+			r.addParam("buyIn", buyIn);
+			sendResponseToAll(r);
 			currentHand = new Hand(this, dealer);
 			currentHand.startHand();
 		}

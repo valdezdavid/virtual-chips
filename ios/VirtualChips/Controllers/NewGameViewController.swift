@@ -130,16 +130,16 @@ extension NewGameViewController : WebSocketDelegate {
                 
                 Game.name = "currentTest"
                 Game.numPlayers = Int(numPlayers)
-                Game.bigBlind = Int(buyIn)
+                Game.bigBlind = Int(bigBlind)
                 Game.smallBlind = Int(smallBlind)
-                Game.buyIn = Int(bigBlind)
+                Game.buyIn = Int(buyIn)
                 Game.gameID = Int(newGameID!)
                 
                 Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
                 
                 print("below is the printing out of the game")
                 print(Game.name ?? "")
-                performSegue(withIdentifier: GAME_CODE_SEGUE, sender: nil)
+                performSegue(withIdentifier: GAME_CODE_SEGUE, sender: newGameID)
             }
             else {
                 

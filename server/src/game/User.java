@@ -163,7 +163,7 @@ public class User {
 			currentGame = Game.getGame(id);
 			if (currentGame.addUser(this) == true) {
 				r.addParam("success", true);
-				r.addParam("userId", id);
+				r.addParam("userId", this.id);
 			}else {
 				r.addParam("success", false);
 				r.addParam("error", "Game " + id + " is full");

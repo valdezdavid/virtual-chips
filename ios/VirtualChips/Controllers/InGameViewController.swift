@@ -24,6 +24,8 @@ class InGameViewController: UIViewController {
     var currentMaxBet = 0
     var currentMinBet = 0
     var currentPotSize = 0
+    var nextPlayer = -1
+    var nextPlayerChips = 0
     
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class InGameViewController: UIViewController {
         ServerConnect.socket!.delegate = self
         // Do any additional setup after loading the view.
         RaiseField.isHidden = true
+        usernameLabel.text = Game.currentPlayer!.username
+        currentChipsLabel.text = String(Game.currentPlayer!.currentBalance)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +66,7 @@ extension InGameViewController : WebSocketDelegate {
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("below is the text from the server")
+        print("IN GAME VIEW CONTROLLER below is the text from the server")
         print(text)
         
         let jsonData = text.data(using: .utf8)!
@@ -100,18 +104,26 @@ extension InGameViewController : WebSocketDelegate {
             currentMaxBet = Int (receivedMessage.params["maxRaise"]!)!
             currentMinBet = Int (receivedMessage.params["minRaise"]!)!
             currentPotSize = Int (receivedMessage.params["potSize"]!)!
-        }
-        if (receivedMessage.event == "playerToMove"){
+        }else if (receivedMessage.event == "playerToMove"){
             //two text fields should be created for the purpose of displaying this.
-            let nextPlayer = Int(receivedMessage.params["id"]!)
-            let nextPlayerChips = receivedMessage.params["chips"]
+            nextPlayer = Int(receivedMessage.params["id"]!)!
+            nextPlayerChips = Int(receivedMessage.params["chips"]!)!
             
             if nextPlayer != Game.currentPlayerId {
-                CheckButton.isHidden = false;
-                RaiseButton.isHidden = false;
-                CallButton.isHidden = false;
-                FoldButton.isHidden = false;
+                CheckButton.isHidden = true;
+                RaiseButton.isHidden = true;
+                CallButton.isHidden = true;
+                FoldButton.isHidden = true;
             }
+        }else if (receivedMessage.event == "bet"){
+            Game.allPlayers[nextPlayer]?.currentBalance = (nextPlayerChips - Int(receivedMessage.params["amount"]!)!)
+            print((Game.allPlayers[nextPlayer]?.username)! + " bet " + receivedMessage.params["amount"]!)
+        }else if (receivedMessage.event == "check"){
+            Game.allPlayers[nextPlayer]?.currentBalance = nextPlayerChips
+            print((Game.allPlayers[nextPlayer]?.username)! + " checked ")
+        }else if (receivedMessage.event == "fold"){
+            Game.allPlayers[nextPlayer]?.currentBalance = nextPlayerChips
+            print((Game.allPlayers[nextPlayer]?.username)! + " folded")
         }
     }
     
