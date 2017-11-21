@@ -20,7 +20,6 @@ public class User {
 
 	private int id;
 	private String username;
-	private String userId;
 	private boolean authenticated = false;
 	private int currentBet = 0;
 	private int chips = 100;
@@ -148,6 +147,7 @@ public class User {
 		Response r = new Response("startGame");
 		r.addParam("success", true);
 		r.addParam("id", currentGame.getId());
+		r.addParam("userId", id);
 		r.send(this);
 	}
 	
@@ -163,6 +163,7 @@ public class User {
 			currentGame = Game.getGame(id);
 			if (currentGame.addUser(this) == true) {
 				r.addParam("success", true);
+				r.addParam("userId", id);
 			}else {
 				r.addParam("success", false);
 				r.addParam("error", "Game " + id + " is full");

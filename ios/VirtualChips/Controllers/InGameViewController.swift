@@ -16,6 +16,11 @@ class InGameViewController: UIViewController {
     @IBOutlet weak var CallButton: UIButton!
     @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var RaiseButton: UIButton!
+    
+    @IBOutlet weak var currentChipsLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

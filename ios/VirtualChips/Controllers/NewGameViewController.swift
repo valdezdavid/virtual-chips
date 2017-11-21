@@ -124,11 +124,28 @@ extension NewGameViewController : WebSocketDelegate {
         let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
         print ("This is the recieved message")
         print (receivedMessage)
-        
-        
-        print (receivedMessage.params["id"]!)
-        performSegue(withIdentifier: GAME_CODE_SEGUE, sender: receivedMessage.params["id"] ?? "-1")
-        
+        if (receivedMessage.event == "startGame"){
+            if (receivedMessage.params["success"] == "true"){
+                let newGameID = receivedMessage.params["id"]
+                let numPlayers = numPlayersLabel.text ?? "5"
+                let buyIn = buyInLabel.text ?? "100"
+                let smallBlind = smallBlindLabel.text ?? "5"
+                let bigBlind = bigBlindLabel.text ?? "10"
+                
+                Game.name = "currentTest"
+                Game.numPlayers = Int(numPlayers)
+                Game.bigBlind = Int(buyIn)
+                Game.smallBlind = Int(smallBlind)
+                Game.buyIn = Int(bigBlind)
+                Game.gameID = Int(newGameID!)
+                
+                print("below is the printing out of the game")
+                print(Game.name)
+            }
+            else {
+                
+            }
+        }
     }
 
     
