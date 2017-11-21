@@ -61,6 +61,20 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 videoPreviewLayer?.frame = view.layer.bounds
                 view.layer.addSublayer(videoPreviewLayer!)
                 
+                let previewLayerConnection = videoPreviewLayer!.connection;
+                
+                if previewLayerConnection!.isVideoOrientationSupported {
+                    switch(UIApplication.shared.statusBarOrientation){
+                    case .landscapeLeft:
+                        previewLayerConnection?.videoOrientation = .landscapeLeft
+                    default:
+                        previewLayerConnection?.videoOrientation = .landscapeRight
+                    }
+                }
+                
+//                if ([previewLayerConnection isVideoOrientationSupported])
+//                [previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+                
                 // Start video capture.
                 captureSession?.startRunning()
                 

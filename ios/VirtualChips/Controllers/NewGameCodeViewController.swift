@@ -65,7 +65,7 @@ extension NewGameCodeViewController : WebSocketDelegate {
         if receivedMessage.event == "startGame" {
             performSegue(withIdentifier: NEW_GAME_START_SEGUE, sender: nil)
         }else if receivedMessage.event == "userJoined"{
-            print("User " + (receivedMessage.params["id"] ?? "N/A") + " joined")
+            print("User " + (receivedMessage.params["userId"] ?? "N/A") + " joined")
         }
         
     }
