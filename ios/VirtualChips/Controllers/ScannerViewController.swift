@@ -181,12 +181,28 @@ extension ScannerViewController : WebSocketDelegate {
         let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
         print ("This is the recieved message")
         print (receivedMessage)
-        if receivedMessage.params["success"] == "true" {
-            Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
-            performSegue(withIdentifier: "waitingForPlayersSegue", sender: nil)
-        }else{
-            scanned = false
-            qrMessageLabel.text = receivedMessage.params["error"]
+        if receivedMessage.event == "joinGame" {
+            if receivedMessage.params["success"] == "true" {
+                Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
+                performSegue(withIdentifier: "waitingForPlayersSegue", sender: nil)
+            }else{
+                scanned = false
+                qrMessageLabel.text = receivedMessage.params["error"]
+            }
+        }else if receivedMessage.event == "beginGame" {
+            let numPlayers = Int(receivedMessage.params["numPlayers"]!)
+            var i = 1;
+            while i <= numPlayers!{
+                let currentPlayerID = Int(receivedMessage.params["userId\(i)"]!)
+                let currentPlayerName = receivedMessage.params["username\(i)"]
+                let addingplayer = Player(username: currentPlayerName!, currentGame: "test", currentBet: 0, userId: currentPlayerID!, currentBalance: Int(receivedMessage.params["buyIn"]!)!)
+                Game.allPlayers[currentPlayerID!] = addingplayer
+                if currentPlayerID == Game.currentPlayerId {
+                    Game.currentPlayer = addingplayer
+                }
+                i = i + 1
+            }
+            performSegue(withIdentifier: "inGameSegue", sender: nil)
         }
         
     }

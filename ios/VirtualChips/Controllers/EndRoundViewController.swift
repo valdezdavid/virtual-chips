@@ -12,7 +12,7 @@ class EndRoundViewController: UIViewController {
     
     
     //Player set (using Player class in Models)
-    var playersSet = Set<Player>()
+    var playersSet : [Player] = []
     
     var numUsers = 0;
 
@@ -57,7 +57,7 @@ extension EndRoundViewController : WebSocketDelegate {
         
         if(receivedMessage.event == "chooseWinner"){
             //Check if there is atleast 1 player
-            if(Int (receivedMessage.params["numUsers"]!) > 0){
+            if(Int(receivedMessage.params["numUsers"]!)! > 0){
                 numUsers = Int (receivedMessage.params["numUsers"]!)!
                 //Save set param
                 for i in 0..<numUsers {

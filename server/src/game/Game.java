@@ -100,6 +100,12 @@ public class Game {
 	public void startGame() {
 		dealer = host;
 		if (users.size() == numUsers) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			Response r = new Response("beginGame");
 			r.addParam("numPlayers", users.size());
 			int i = 1;
@@ -110,6 +116,12 @@ public class Game {
 			}
 			r.addParam("buyIn", buyIn);
 			sendResponseToAll(r);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			currentHand = new Hand(this, dealer);
 			currentHand.startHand();
 		}

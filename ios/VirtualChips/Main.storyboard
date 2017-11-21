@@ -383,6 +383,7 @@
                         <outlet property="qrMessageLabel" destination="3lN-dD-M73" id="zdL-l6-TOO"/>
                         <outlet property="topbar" destination="XuL-SU-cBB" id="mDs-jA-Oef"/>
                         <segue destination="JSP-cU-hJe" kind="show" identifier="waitingForPlayersSegue" id="sUk-Bh-d7X"/>
+                        <segue destination="Ekl-fG-7E7" kind="show" identifier="inGameSegue" id="Zoc-XZ-q7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhL-ax-AA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,30 +438,43 @@
                                 <rect key="frame" x="140" y="256" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Fold">
-                                    <color key="titleColor" red="0.012406897668393757" green="0.012406897668393757" blue="0.012406897668393757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickFold:" destination="Ekl-fG-7E7" eventType="touchUpInside" id="4kz-6d-d1g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLb-KI-bDy">
                                 <rect key="frame" x="539" y="256" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0090875971499999996" green="0.0090875971499999996" blue="0.0090875971499999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Raise">
-                                    <color key="titleColor" red="0.0090875971499999996" green="0.0090875971499999996" blue="0.0090875971499999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickRaise:" destination="Ekl-fG-7E7" eventType="touchUpInside" id="chA-JO-xWP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-av-l62">
                                 <rect key="frame" x="35" y="256" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Check">
-                                    <color key="titleColor" red="0.0090875971499999996" green="0.0090875971499999996" blue="0.0090875971499999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.99489795918367352" green="0.98979591836734693" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickCheck:" destination="Ekl-fG-7E7" eventType="touchUpInside" id="pwf-bD-xDT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sn-EL-5ig">
-                                <rect key="frame" x="423" y="256" width="73" height="30"/>
+                                <rect key="frame" x="398" y="256" width="122" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Call">
-                                    <color key="titleColor" red="0.0090875971499999996" green="0.0090875971499999996" blue="0.0090875971499999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickCall:" destination="Ekl-fG-7E7" eventType="touchUpInside" id="2ta-fH-vjv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W57-Wu-b5b">
                                 <rect key="frame" x="171" y="334" width="298" height="20.5"/>
@@ -474,13 +488,34 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjK-uv-Gxw">
                                 <rect key="frame" x="278" y="261" width="84" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-XD-5yw">
+                                <rect key="frame" x="35" y="20" width="612" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hd-AQ-FAe">
+                                <rect key="frame" x="35" y="55" width="612" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-Ep-xsi">
+                                <rect key="frame" x="35" y="95" width="612" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -493,11 +528,10 @@
                         <outlet property="FoldButton" destination="ggh-5a-ROs" id="mKk-XL-F0i"/>
                         <outlet property="RaiseButton" destination="cLb-KI-bDy" id="shj-OT-z1P"/>
                         <outlet property="RaiseField" destination="H0J-9O-8EY" id="nYf-nk-e9D"/>
-                        <outlet property="clickCall" destination="1sn-EL-5ig" id="Ciy-Yv-iNH"/>
-                        <outlet property="clickCheck" destination="7J1-av-l62" id="gIt-41-X4D"/>
-                        <outlet property="clickFold" destination="ggh-5a-ROs" id="Lhs-hB-KeY"/>
-                        <outlet property="clickRaise" destination="cLb-KI-bDy" id="V43-dm-ce3"/>
                         <outlet property="currentChipsLabel" destination="JjK-uv-Gxw" id="HzN-jz-cx2"/>
+                        <outlet property="lastMoveLabel" destination="6Hd-AQ-FAe" id="Yqv-h0-aca"/>
+                        <outlet property="nextToMoveLabel" destination="5Sc-XD-5yw" id="SZw-eq-iiY"/>
+                        <outlet property="potSizeLabel" destination="kkt-Ep-xsi" id="9mo-Li-dkd"/>
                         <outlet property="usernameLabel" destination="W57-Wu-b5b" id="80r-ak-eYD"/>
                         <segue destination="rxC-93-pkK" kind="presentation" identifier="endGameSegue" id="tUx-cf-sHi"/>
                         <segue destination="tuE-Yi-koh" kind="show" identifier="endRoundSegue" id="zl8-X7-1Cf"/>
@@ -729,7 +763,7 @@
         <image name="pokerBG" width="512" height="352"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TJn-oQ-5d6"/>
+        <segue reference="Zoc-XZ-q7U"/>
         <segue reference="cX5-ey-9g0"/>
     </inferredMetricsTieBreakers>
 </document>

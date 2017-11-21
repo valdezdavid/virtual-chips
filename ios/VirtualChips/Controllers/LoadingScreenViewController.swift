@@ -49,7 +49,7 @@ extension LoadingScreenViewController : WebSocketDelegate {
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("below is the text from the server")
+        print("LOADING below is the text from the server")
         print(text)
         
         let jsonData = text.data(using: .utf8)!
