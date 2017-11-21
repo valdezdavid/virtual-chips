@@ -670,7 +670,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-Fh-5qP">
-                                <rect key="frame" x="318" y="259" width="30" height="30"/>
+                                <rect key="frame" x="318" y="259" width="30" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="test"/>
                                 <connections>
@@ -678,16 +678,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74L-2v-A8x">
-                                <rect key="frame" x="213" y="123" width="240" height="128"/>
+                                <rect key="frame" x="233" y="87" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-Vc-7p7">
-                                <rect key="frame" x="249" y="85" width="169" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jYi-6B-OCN"/>
@@ -695,7 +688,6 @@
                     <connections>
                         <outlet property="imageView" destination="74L-2v-A8x" id="HfU-om-brK"/>
                         <outlet property="testButton" destination="QP2-Fh-5qP" id="a5M-qn-8vB"/>
-                        <outlet property="textField" destination="TdG-Vc-7p7" id="eEo-8t-7MI"/>
                         <segue destination="Ekl-fG-7E7" kind="show" identifier="testSegue" id="TJn-oQ-5d6"/>
                     </connections>
                 </viewController>
@@ -710,6 +702,6 @@
         <image name="pokerBG" width="512" height="352"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qmW-sH-ss9"/>
+        <segue reference="cX5-ey-9g0"/>
     </inferredMetricsTieBreakers>
 </document>

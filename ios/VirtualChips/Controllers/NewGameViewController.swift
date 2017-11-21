@@ -90,7 +90,13 @@ class NewGameViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == GAME_CODE_SEGUE){
+            let secondViewController = segue.destination as! NewGameCodeViewController
+            secondViewController.gameID = sender as! String?
+            
+        }
+    }
     
 } //CLASS
 extension NewGameViewController : WebSocketDelegate {
@@ -121,7 +127,7 @@ extension NewGameViewController : WebSocketDelegate {
         
         
         print (receivedMessage.params["id"]!)
-        performSegue(withIdentifier: GAME_CODE_SEGUE, sender: nil)
+        performSegue(withIdentifier: GAME_CODE_SEGUE, sender: receivedMessage.params["id"] ?? "-1")
         
     }
 

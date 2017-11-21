@@ -10,10 +10,9 @@ import UIKit
 import Starscream
 class NewGameCodeViewController: UIViewController {
 
-    private let NEW_GAME_LOADING_SEGUE = "newGameLoadingSegue"
+    let NEW_GAME_LOADING_SEGUE = "newGameLoadingSegue"
     
-    
-    @IBOutlet weak var textField: UITextField!
+    var gameID : String?
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var testButton: UIButton!
     
@@ -21,7 +20,13 @@ class NewGameCodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let data = (gameID ?? "").data(using: .ascii, allowLossyConversion: false)
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        
+        let img = UIImage(ciImage: (filter?.outputImage)!)
+        
+        imageView.image = img
         // Do any additional setup after loading the view.
     }
 
@@ -31,16 +36,6 @@ class NewGameCodeViewController: UIViewController {
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
-        if let myString = textField.text
-        {
-            let data = myString.data(using: .ascii, allowLossyConversion: false)
-            let filter = CIFilter(name: "CIQRCodeGenerator")
-            filter?.setValue(data, forKey: "inputMessage")
-            
-            let img = UIImage(ciImage: (filter?.outputImage)!)
-            
-            imageView.image = img
-        }
         performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
     }
 }
