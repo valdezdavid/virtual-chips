@@ -176,6 +176,10 @@ public class User {
 		}
 	}
 	
+	public String getUsername() {
+		return username == null ? String.valueOf(id) : username;
+	}
+
 	public int getChips() {
 		return chips;
 	}

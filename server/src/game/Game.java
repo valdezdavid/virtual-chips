@@ -100,8 +100,15 @@ public class Game {
 	public void startGame() {
 		dealer = host;
 		if (users.size() == numUsers) {
-			Response r = new Response("startGame");
+			Response r = new Response("beginGame");
 			sendResponseToAll(r);
+			r.addParam("numPlayers", users.size());
+			int i = 1;
+			for (User u : users) {
+				r.addParam("userId" + i, u.getId());
+				r.addParam("username" + i, u.getUsername());
+				i++;
+			}
 			currentHand = new Hand(this, dealer);
 			currentHand.startHand();
 		}

@@ -59,7 +59,19 @@ extension LoadingScreenViewController : WebSocketDelegate {
         let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
         print ("This is the recieved message")
         print (receivedMessage)
-        if receivedMessage.event == "startGame" {
+        if receivedMessage.event == "beginGame" {
+            let numPlayers = Int(receivedMessage.params["numPlayers"]!)
+            var i = 1;
+            while i <= numPlayers!{
+                let currentPlayerID = Int(receivedMessage.params["userId\(i)"]!)
+                let currentPlayerName = receivedMessage.params["username\(i)"]
+                let addingplayer = Player(username: currentPlayerName!, currentGame: "test", currentBet: 0, userId: currentPlayerID!, currentBalance: Game.buyIn!)
+                Game.allPlayers += [addingplayer!]
+                if currentPlayerID == Game.currentPlayerId {
+                    Game.currentPlayer = addingplayer
+                }
+                i = i + 1
+            }
             performSegue(withIdentifier: "startGameSegue", sender: nil)
         }
         

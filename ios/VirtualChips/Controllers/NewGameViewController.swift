@@ -139,6 +139,8 @@ extension NewGameViewController : WebSocketDelegate {
                 Game.buyIn = Int(bigBlind)
                 Game.gameID = Int(newGameID!)
                 
+                Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
+                
                 print("below is the printing out of the game")
                 print(Game.name ?? "")
             }

@@ -11,7 +11,7 @@ import AVFoundation
 import Starscream
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+    
     @IBOutlet weak var topbar: UIView!
     @IBOutlet weak var qrMessageLabel: UILabel!
     
@@ -72,14 +72,15 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     }
                 }
                 
-//                if ([previewLayerConnection isVideoOrientationSupported])
-//                [previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+                //                if ([previewLayerConnection isVideoOrientationSupported])
+                //                [previewLayerConnection setVideoOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
                 
                 // Start video capture.
                 captureSession?.startRunning()
                 
                 // Move the message label and top bar to the front
                 view.bringSubview(toFront: topbar)
+                view.bringSubview(toFront: qrMessageLabel)
                 
                 // Initialize QR Code Frame to highlight the QR code
                 qrCodeFrameView = UIView()
@@ -177,6 +178,7 @@ extension ScannerViewController : WebSocketDelegate {
         print ("This is the recieved message")
         print (receivedMessage)
         if receivedMessage.params["success"] == "true" {
+            Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
             performSegue(withIdentifier: "waitingForPlayersSegue", sender: nil)
         }else{
             qrMessageLabel.text = receivedMessage.params["error"]
@@ -187,3 +189,4 @@ extension ScannerViewController : WebSocketDelegate {
     
     
 }
+
