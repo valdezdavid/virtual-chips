@@ -16,7 +16,7 @@ class Game {
     static var smallBlind: Int?
     static var buyIn: Int?
     static var gameID: Int?
-    static var allPlayers: [Player] = []
+    static var allPlayers: [Int : Player] = [:]
     static var currentPlayerId: Int?
     static var currentPlayer: Player?
     

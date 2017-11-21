@@ -66,7 +66,7 @@ extension LoadingScreenViewController : WebSocketDelegate {
                 let currentPlayerID = Int(receivedMessage.params["userId\(i)"]!)
                 let currentPlayerName = receivedMessage.params["username\(i)"]
                 let addingplayer = Player(username: currentPlayerName!, currentGame: "test", currentBet: 0, userId: currentPlayerID!, currentBalance: Game.buyIn!)
-                Game.allPlayers += [addingplayer!]
+                Game.allPlayers[currentPlayerID!] = addingplayer
                 if currentPlayerID == Game.currentPlayerId {
                     Game.currentPlayer = addingplayer
                 }

@@ -17,13 +17,19 @@ class InGameViewController: UIViewController {
     @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var RaiseButton: UIButton!
     
-    @IBOutlet weak var currentChipsLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var currentChipsLabel: UILabel!
+    
+    var currentCallAmount = 0
+    var currentMaxBet = 0
+    var currentMinBet = 0
+    var currentPotSize = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ServerConnect.socket!.delegate = self
         // Do any additional setup after loading the view.
         RaiseField.isHidden = true
     }
@@ -33,10 +39,84 @@ class InGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func raiseClicked(_ sender: Any) {
-        RaiseField.isHidden = false
-    }
+    @IBOutlet weak var clickCheck: UIButton!
+    @IBOutlet weak var clickFold: UIButton!
+    @IBOutlet weak var clickCall: UIButton!
+    @IBOutlet weak var clickRaise: UIButton!
     
 
 }
+
+extension InGameViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
+    
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("below is the text from the server")
+        print(text)
+        
+        let jsonData = text.data(using: .utf8)!
+        print ("jsonData is listed below")
+        print (jsonData)
+        let decoder = JSONDecoder()
+        let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
+        print ("This is the recieved message")
+        print (receivedMessage)
+        
+        if (receivedMessage.event == "moveOptions"){
+            if (receivedMessage.params["canCheck"] == "true"){
+                //display the check option for the user
+                CheckButton.isHidden = false;
+            }
+            else{
+                CheckButton.isHidden = true;
+            }
+            if (receivedMessage.params["canRaise"] == "true"){
+                //display the option for raising to the user
+                RaiseButton.isHidden = false;
+            }
+            else{
+                RaiseButton.isHidden = true;
+            }
+            if (receivedMessage.params["canCall"] == "true"){
+                //display the option for raising to the user
+                CallButton.isHidden = false;
+            }
+            else{
+                CallButton.isHidden = true;
+            }
+            FoldButton.isHidden = true;
+            currentCallAmount = Int (receivedMessage.params["callAmount"]!)!
+            currentMaxBet = Int (receivedMessage.params["maxRaise"]!)!
+            currentMinBet = Int (receivedMessage.params["minRaise"]!)!
+            currentPotSize = Int (receivedMessage.params["potSize"]!)!
+        }
+        if (receivedMessage.event == "playerToMove"){
+            //two text fields should be created for the purpose of displaying this.
+            let nextPlayer = Int(receivedMessage.params["id"]!)
+            let nextPlayerChips = receivedMessage.params["chips"]
+            
+            if nextPlayer != Game.currentPlayerId {
+                CheckButton.isHidden = false;
+                RaiseButton.isHidden = false;
+                CallButton.isHidden = false;
+                FoldButton.isHidden = false;
+            }
+        }
+    }
+    
+    
+    
+}
+
+

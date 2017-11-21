@@ -85,10 +85,6 @@ class NewGameViewController: UIViewController {
         
     }
     
-    
-    @IBAction func cancelNewGameClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == GAME_CODE_SEGUE){
@@ -143,6 +139,7 @@ extension NewGameViewController : WebSocketDelegate {
                 
                 print("below is the printing out of the game")
                 print(Game.name ?? "")
+                performSegue(withIdentifier: GAME_CODE_SEGUE, sender: nil)
             }
             else {
                 
