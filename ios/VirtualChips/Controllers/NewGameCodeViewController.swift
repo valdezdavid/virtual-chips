@@ -10,16 +10,16 @@ import UIKit
 import Starscream
 class NewGameCodeViewController: UIViewController {
 
-    let NEW_GAME_LOADING_SEGUE = "testSegue"
-    
+    let NEW_GAME_START_SEGUE = "hostStartGameSegue"
+
     var gameID : String?
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var testButton: UIButton!
     
-    private let TEST_SEGUE = "testSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ServerConnect.socket!.delegate = self
         let data = (gameID ?? "").data(using: .ascii, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter?.setValue(data, forKey: "inputMessage")
@@ -34,8 +34,42 @@ class NewGameCodeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func buttonClicked(_ sender: Any) {
-        performSegue(withIdentifier: NEW_GAME_LOADING_SEGUE, sender: nil)
+
+}
+
+extension NewGameCodeViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
     }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
+    
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("below is the text from the server")
+        print(text)
+        
+        let jsonData = text.data(using: .utf8)!
+        print ("jsonData is listed below")
+        print (jsonData)
+        let decoder = JSONDecoder()
+        let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
+        print ("This is the recieved message")
+        print (receivedMessage)
+        if receivedMessage.event == "startGame" {
+            performSegue(withIdentifier: NEW_GAME_START_SEGUE, sender: nil)
+        }else if receivedMessage.event == "userJoined"{
+            print("User " + (receivedMessage.params["id"] ?? "N/A") + " joined")
+        }
+        
+    }
+    
+    
+    
 }

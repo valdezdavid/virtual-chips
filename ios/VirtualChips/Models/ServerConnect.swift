@@ -25,7 +25,7 @@ class ServerConnect{
     static var socket: WebSocket? = nil
     
     static func sendServerConnection() {
-        ServerConnect.socket = WebSocket(url: URL(string: "ws://localhost:8080/CSCI-PokerChipServer/pokerchip")!, protocols: ["chat"])
+        ServerConnect.socket = WebSocket(url: URL(string: "https://12278dae.ngrok.io/CSCI-PokerChipServer/pokerchip")!, protocols: ["chat"])
         print("hello")
         ServerConnect.socket?.connect()
     }

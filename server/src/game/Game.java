@@ -100,6 +100,8 @@ public class Game {
 	public void startGame() {
 		dealer = host;
 		if (users.size() == numUsers) {
+			Response r = new Response("startGame");
+			sendResponseToAll(r);
 			currentHand = new Hand(this, dealer);
 			currentHand.startHand();
 		}

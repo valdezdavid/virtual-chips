@@ -12,7 +12,7 @@ class LoadingScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ServerConnect.socket!.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +32,39 @@ class LoadingScreenViewController: UIViewController {
     }
     */
 
+}
+
+extension LoadingScreenViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
+    
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("below is the text from the server")
+        print(text)
+        
+        let jsonData = text.data(using: .utf8)!
+        print ("jsonData is listed below")
+        print (jsonData)
+        let decoder = JSONDecoder()
+        let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
+        print ("This is the recieved message")
+        print (receivedMessage)
+        if receivedMessage.event == "startGame" {
+            performSegue(withIdentifier: "startGameSegue", sender: nil)
+        }
+        
+    }
+    
+    
+    
 }
