@@ -15,6 +15,7 @@
 		F630F4751FBA8C6A00CC0673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F630F4741FBA8C6A00CC0673 /* Assets.xcassets */; };
 		F630F4781FBA8C6A00CC0673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630F4761FBA8C6A00CC0673 /* LaunchScreen.storyboard */; };
 		F6AE81E11FC3905E00AC0790 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */; };
+		F6AE81E51FC3E52600AC0790 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE81E41FC3E52600AC0790 /* CustomButton.swift */; };
 		F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */; };
 		F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */; };
 		F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D11FBBC8890076E59C /* NewGameViewController.swift */; };
@@ -54,6 +55,7 @@
 		F630F4791FBA8C6A00CC0673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F630F47E1FBA8C6A00CC0673 /* VirtualChipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualChipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = Controllers/ScannerViewController.swift; sourceTree = "<group>"; };
+		F6AE81E41FC3E52600AC0790 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHubViewController.swift; path = Controllers/GameHubViewController.swift; sourceTree = "<group>"; };
 		F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		F6D493D11FBBC8890076E59C /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = Controllers/NewGameViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		F630F48F1FBA8CCB00CC0673 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6AE81E41FC3E52600AC0790 /* CustomButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */,
 				F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */,
 				F6AE81E11FC3905E00AC0790 /* ScannerViewController.swift in Sources */,
+				F6AE81E51FC3E52600AC0790 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
