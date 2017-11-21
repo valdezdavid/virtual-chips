@@ -127,6 +127,12 @@ public class Game {
 		}
 	}
 	
+	public void newHand() {
+		dealer = userAfter(dealer);
+		currentHand = new Hand(this, dealer);
+		currentHand.startHand();
+	}
+	
 	public void destroyGame() {
 		games.remove(id);
 	}

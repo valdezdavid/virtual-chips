@@ -15,7 +15,7 @@
 import UIKit
 import Starscream
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     //Declares Login Segue as Constant
     let LOGIN_GAMEHUB_SEGUE = "loginGameHubSegue";
     
@@ -36,6 +36,11 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func cancelLogin(_ sender: Any) {
