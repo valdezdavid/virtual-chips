@@ -27,6 +27,7 @@
 		F6E6FDE31FBAD9C700D7298B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */; };
 		F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */; };
 		F6F665E21FC29D4900772F8C /* ServerConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F665E11FC29D4900772F8C /* ServerConnect.swift */; };
+		F6F74ADD1FC4013600420DAB /* EndRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F74ADC1FC4013600420DAB /* EndRoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F6E6FDE21FBAD9C700D7298B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		F6E6FDE41FBAE19900D7298B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		F6F665E11FC29D4900772F8C /* ServerConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServerConnect.swift; path = Models/ServerConnect.swift; sourceTree = "<group>"; };
+		F6F74ADC1FC4013600420DAB /* EndRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndRoundViewController.swift; path = Controllers/EndRoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				F6D493DB1FBD7FE90076E59C /* InGameViewController.swift */,
 				F6D493DD1FBD802B0076E59C /* EndGameViewController.swift */,
 				F6AE81E01FC3905E00AC0790 /* ScannerViewController.swift */,
+				F6F74ADC1FC4013600420DAB /* EndRoundViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				F629E6601FC265BE00597489 /* Game.swift in Sources */,
 				F629E6621FC2660E00597489 /* Player.swift in Sources */,
 				F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */,
+				F6F74ADD1FC4013600420DAB /* EndRoundViewController.swift in Sources */,
 				F6E6FDE51FBAE19900D7298B /* WelcomeViewController.swift in Sources */,
 				F6D493D61FBBDC870076E59C /* LoadingScreenViewController.swift in Sources */,
 				F6F665E21FC29D4900772F8C /* ServerConnect.swift in Sources */,

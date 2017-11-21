@@ -500,11 +500,33 @@
                         <outlet property="currentChipsLabel" destination="JjK-uv-Gxw" id="HzN-jz-cx2"/>
                         <outlet property="usernameLabel" destination="W57-Wu-b5b" id="80r-ak-eYD"/>
                         <segue destination="rxC-93-pkK" kind="presentation" identifier="endGameSegue" id="tUx-cf-sHi"/>
+                        <segue destination="tuE-Yi-koh" kind="show" identifier="endRoundSegue" id="zl8-X7-1Cf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rES-J7-2xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074.5127436281859" y="4664.8000000000002"/>
+        </scene>
+        <!--End Round View Controller-->
+        <scene sceneID="IWL-YF-RMk">
+            <objects>
+                <viewController id="tuE-Yi-koh" customClass="EndRoundViewController" customModule="VirtualChips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9QR-oG-Vrl">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inGameView" translatesAutoresizingMaskIntoConstraints="NO" id="ivS-JO-3aw">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="xRe-Uw-fmV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U24-jU-YdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440.6296851574214" y="5485.6000000000004"/>
         </scene>
         <!--End Game View Controller-->
         <scene sceneID="Liv-CF-jSX">
@@ -708,6 +730,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TJn-oQ-5d6"/>
-        <segue reference="qmW-sH-ss9"/>
+        <segue reference="cX5-ey-9g0"/>
     </inferredMetricsTieBreakers>
 </document>
