@@ -209,7 +209,7 @@ extension InGameViewController : WebSocketDelegate {
             else{
                 CallButton.isHidden = true;
             }
-            FoldButton.isHidden = true;
+            FoldButton.isHidden = false;
             currentCallAmount = Int (receivedMessage.params["callAmount"]!)!
             currentMaxBet = Int (receivedMessage.params["maxRaise"]!)!
             currentMinBet = Int (receivedMessage.params["minRaise"]!)!
