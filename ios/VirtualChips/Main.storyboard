@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokerBG" translatesAutoresizingMaskIntoConstraints="NO" id="N0f-VQ-3Qe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokerBG" translatesAutoresizingMaskIntoConstraints="NO" id="N0f-VQ-3Qe" customClass="Cu">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Virtual Chips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPQ-tN-pVW">
@@ -34,7 +34,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OQ-6d-qDo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OQ-6d-qDo" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="154" y="128" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UOF-Pc-K4P"/>
@@ -47,7 +47,7 @@
                                     <action selector="loginWelcome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n3z-cr-ucf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-F3-Gr1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-F3-Gr1" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="135" y="172" width="98" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Pzf-YP-c2I"/>
@@ -60,7 +60,7 @@
                                     <action selector="signUpWelcome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C4l-SO-xcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-cA-Mip">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-cA-Mip" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="113" y="210" width="145" height="30"/>
                                 <state key="normal" title="or Continue as Guest">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -172,11 +172,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-Hv-2kv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-Hv-2kv" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="98" y="263" width="81" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.0090875971502590858" green="0.0090875971502590858" blue="0.0090875971502590858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="WTe-lE-JqX" eventType="touchUpInside" id="gg1-D5-MQX"/>
@@ -256,14 +256,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZU-1v-7sZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZU-1v-7sZ" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="109" y="237" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AYL-eb-7Mv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.024935233160621739" green="0.024839253516447904" blue="0.02237392564811776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="dxt-VU-fQ4" eventType="touchUpInside" id="is6-P5-931"/>
@@ -305,11 +305,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMd-XB-qPw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMd-XB-qPw" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="109" y="275" width="81" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.024724140515308898" green="0.024935233160621739" blue="0.019446510642509036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelLogin:" destination="dxt-VU-fQ4" eventType="touchUpInside" id="i4g-1z-XLd"/>
@@ -380,7 +380,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokerBG" translatesAutoresizingMaskIntoConstraints="NO" id="iRQ-c3-cSc">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7C-uU-tDW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7C-uU-tDW" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="20" y="172" width="170" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start New Game">
@@ -391,7 +391,7 @@
                                     <segue destination="PTr-WJ-BfM" kind="show" identifier="newGameSegue" id="wM5-RK-mwQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW7-wW-HPn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW7-wW-HPn" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="248" y="169" width="170" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join Game">
@@ -771,19 +771,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="818-W1-cke">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="818-W1-cke" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="248" y="263" width="78" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="WFg-5T-6ng"/>
                                 </constraints>
-                                <state key="normal" title="Start Game"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="AOc-lH-wAI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-gM-oxE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-gM-oxE" customClass="CustomButton" customModule="VirtualChips" customModuleProvider="target">
                                 <rect key="frame" x="42" y="263" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="aIv-AN-PJE"/>
                                     <action selector="cancelNewGameClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="pVD-6Y-gdJ"/>
@@ -920,6 +924,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="667-fh-smf"/>
-        <segue reference="ora-Sc-1MI"/>
+        <segue reference="qmW-sH-ss9"/>
     </inferredMetricsTieBreakers>
 </document>
