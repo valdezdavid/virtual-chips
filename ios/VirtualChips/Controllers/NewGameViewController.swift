@@ -140,7 +140,7 @@ extension NewGameViewController : WebSocketDelegate {
                 Game.gameID = Int(newGameID!)
                 
                 print("below is the printing out of the game")
-                print(Game.name)
+                print(Game.name ?? "")
             }
             else {
                 
