@@ -66,7 +66,7 @@ extension InGameViewController : WebSocketDelegate {
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("below is the text from the server")
+        print("IN GAME VIEW CONTROLLER below is the text from the server")
         print(text)
         
         let jsonData = text.data(using: .utf8)!
@@ -110,10 +110,10 @@ extension InGameViewController : WebSocketDelegate {
             nextPlayerChips = Int(receivedMessage.params["chips"]!)!
             
             if nextPlayer != Game.currentPlayerId {
-                CheckButton.isHidden = false;
-                RaiseButton.isHidden = false;
-                CallButton.isHidden = false;
-                FoldButton.isHidden = false;
+                CheckButton.isHidden = true;
+                RaiseButton.isHidden = true;
+                CallButton.isHidden = true;
+                FoldButton.isHidden = true;
             }
         }else if (receivedMessage.event == "bet"){
             Game.allPlayers[nextPlayer]?.currentBalance = (nextPlayerChips - Int(receivedMessage.params["amount"]!)!)

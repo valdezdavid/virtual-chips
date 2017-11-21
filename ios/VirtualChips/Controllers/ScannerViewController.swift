@@ -19,6 +19,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var scanned = false
     
     let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                               AVMetadataObject.ObjectType.code39,
@@ -131,7 +132,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 do {
                     if let jsonData = try? jsonEncoder.encode(m1) {
                         if let jsonString = String(data: jsonData, encoding: .utf8){
-                            ServerConnect.socket?.write(string: jsonString)
+                            if (!scanned){
+                                scanned = true
+                                ServerConnect.socket?.write(string: jsonString)
+                            }
                             qrMessageLabel.text = "Connecting..."
                             print("below is the jsonString")
                             print(jsonString)
@@ -181,6 +185,7 @@ extension ScannerViewController : WebSocketDelegate {
             Game.currentPlayerId = Int(receivedMessage.params["userId"]!)
             performSegue(withIdentifier: "waitingForPlayersSegue", sender: nil)
         }else{
+            scanned = false
             qrMessageLabel.text = receivedMessage.params["error"]
         }
         
