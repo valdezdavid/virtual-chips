@@ -18,7 +18,6 @@
 		F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */; };
 		F6D493D01FBBB9D60076E59C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */; };
 		F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D11FBBC8890076E59C /* NewGameViewController.swift */; };
-		F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */; };
 		F6D493D61FBBDC870076E59C /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */; };
 		F6D493D81FBD7C150076E59C /* NewGameCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */; };
 		F6D493DA1FBD7FC70076E59C /* AlignPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */; };
@@ -59,7 +58,6 @@
 		F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameHubViewController.swift; path = Controllers/GameHubViewController.swift; sourceTree = "<group>"; };
 		F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		F6D493D11FBBC8890076E59C /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = Controllers/NewGameViewController.swift; sourceTree = "<group>"; };
-		F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JoinGameViewController.swift; path = Controllers/JoinGameViewController.swift; sourceTree = "<group>"; };
 		F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = Controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameCodeViewController.swift; path = Controllers/NewGameCodeViewController.swift; sourceTree = "<group>"; };
 		F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlignPlayersViewController.swift; path = Controllers/AlignPlayersViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				F6D493CD1FBBB89F0076E59C /* GameHubViewController.swift */,
 				F6D493CF1FBBB9D60076E59C /* RegisterViewController.swift */,
 				F6D493D11FBBC8890076E59C /* NewGameViewController.swift */,
-				F6D493D31FBBC89B0076E59C /* JoinGameViewController.swift */,
 				F6D493D51FBBDC870076E59C /* LoadingScreenViewController.swift */,
 				F6D493D71FBD7C150076E59C /* NewGameCodeViewController.swift */,
 				F6D493D91FBD7FC70076E59C /* AlignPlayersViewController.swift */,
@@ -414,7 +411,6 @@
 				F6D493CE1FBBB89F0076E59C /* GameHubViewController.swift in Sources */,
 				F630F46E1FBA8C6A00CC0673 /* AppDelegate.swift in Sources */,
 				F6D493D21FBBC8890076E59C /* NewGameViewController.swift in Sources */,
-				F6D493D41FBBC89B0076E59C /* JoinGameViewController.swift in Sources */,
 				F6AE81E11FC3905E00AC0790 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

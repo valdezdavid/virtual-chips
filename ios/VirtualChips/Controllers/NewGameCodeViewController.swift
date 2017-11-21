@@ -10,7 +10,7 @@ import UIKit
 import Starscream
 class NewGameCodeViewController: UIViewController {
 
-    let NEW_GAME_LOADING_SEGUE = "newGameLoadingSegue"
+    let NEW_GAME_LOADING_SEGUE = "testSegue"
     
     var gameID : String?
     @IBOutlet weak var imageView: UIImageView!

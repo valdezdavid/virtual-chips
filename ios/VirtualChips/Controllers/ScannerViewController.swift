@@ -8,11 +8,12 @@
 
 import UIKit
 import AVFoundation
+import Starscream
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet weak var topbar: UIView!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var qrMessageLabel: UILabel!
     
     
     var captureSession:AVCaptureSession?
@@ -33,54 +34,54 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ServerConnect.socket?.delegate = self
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-        
-        do {
-            // Get an instance of the AVCaptureDeviceInput class using the previous device object.
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
-            
-            // Initialize the captureSession object.
-            captureSession = AVCaptureSession()
-            
-            // Set the input device on the capture session.
-            captureSession?.addInput(input)
-            
-            // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
-            let captureMetadataOutput = AVCaptureMetadataOutput()
-            captureSession?.addOutput(captureMetadataOutput)
-            
-            // Set delegate and use the default dispatch queue to execute the call back
-            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
-            
-            // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            // Start video capture.
-            captureSession?.startRunning()
-            
-            // Move the message label and top bar to the front
-            view.bringSubview(toFront: messageLabel)
-            view.bringSubview(toFront: topbar)
-            
-            // Initialize QR Code Frame to highlight the QR code
-            qrCodeFrameView = UIView()
-            
-            if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                qrCodeFrameView.layer.borderWidth = 2
-                view.addSubview(qrCodeFrameView)
-                view.bringSubview(toFront: qrCodeFrameView)
+        if let captureDevice = AVCaptureDevice.default(for: AVMediaType.video){
+            do {
+                // Get an instance of the AVCaptureDeviceInput class using the previous device object.
+                let input = try AVCaptureDeviceInput(device: captureDevice)
+                
+                // Initialize the captureSession object.
+                captureSession = AVCaptureSession()
+                
+                // Set the input device on the capture session.
+                captureSession?.addInput(input)
+                
+                // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
+                let captureMetadataOutput = AVCaptureMetadataOutput()
+                captureSession?.addOutput(captureMetadataOutput)
+                
+                // Set delegate and use the default dispatch queue to execute the call back
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
+                
+                // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
+                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+                videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                videoPreviewLayer?.frame = view.layer.bounds
+                view.layer.addSublayer(videoPreviewLayer!)
+                
+                // Start video capture.
+                captureSession?.startRunning()
+                
+                // Move the message label and top bar to the front
+                view.bringSubview(toFront: topbar)
+                
+                // Initialize QR Code Frame to highlight the QR code
+                qrCodeFrameView = UIView()
+                
+                if let qrCodeFrameView = qrCodeFrameView {
+                    qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                    qrCodeFrameView.layer.borderWidth = 2
+                    view.addSubview(qrCodeFrameView)
+                    view.bringSubview(toFront: qrCodeFrameView)
+                }
+                
+            } catch {
+                // If any error occurs, simply print it out and don't continue any more.
+                print(error)
+                return
             }
-            
-        } catch {
-            // If any error occurs, simply print it out and don't continue any more.
-            print(error)
-            return
         }
     }
     
@@ -95,9 +96,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
-        if metadataObjects == nil || metadataObjects.count == 0 {
+        if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-            messageLabel.text = "No QR/barcode is detected"
             return
         }
         
@@ -110,9 +110,66 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                messageLabel.text = metadataObj.stringValue
+                let messageContent = ["id" : metadataObj.stringValue]
+                let m1 = SendingMessage(command: "joinGame", params: messageContent as! [String : String])
+                let jsonEncoder = JSONEncoder()
+                do {
+                    if let jsonData = try? jsonEncoder.encode(m1) {
+                        if let jsonString = String(data: jsonData, encoding: .utf8){
+                            ServerConnect.socket?.write(string: jsonString)
+                            qrMessageLabel.text = "Connecting..."
+                            print("below is the jsonString")
+                            print(jsonString)
+                            print("has tried to write the data")
+                        }
+                        else{
+                            print ("encoding failed")
+                        }
+                    }
+                    else {
+                        print ("encoding failed")
+                        return
+                    }
+                }
             }
         }
     }
+    
+}
 
+extension ScannerViewController : WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        
+    }
+    
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("below is the text from the server")
+        print(text)
+        
+        let jsonData = text.data(using: .utf8)!
+        print ("jsonData is listed below")
+        print (jsonData)
+        let decoder = JSONDecoder()
+        let receivedMessage = try! decoder.decode(ReceivedMessage.self, from: jsonData)
+        print ("This is the recieved message")
+        print (receivedMessage)
+        if receivedMessage.params["success"] == "true" {
+            performSegue(withIdentifier: "waitingForPlayersSegue", sender: nil)
+        }else{
+            qrMessageLabel.text = receivedMessage.params["error"]
+        }
+        
+    }
+    
+    
+    
 }

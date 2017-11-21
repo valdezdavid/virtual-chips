@@ -299,7 +299,7 @@
                                 </state>
                                 <connections>
                                     <action selector="joinGameClicked:" destination="G2P-iw-N6S" eventType="touchUpInside" id="f2K-p9-N8z"/>
-                                    <segue destination="LmF-JQ-27D" kind="show" identifier="joinGameSegue" id="BVw-Pr-qOW"/>
+                                    <segue destination="AXj-7j-XtF" kind="show" identifier="joinGameSegue" id="Rkw-PK-LnD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gamehub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-3z-i9q">
@@ -318,42 +318,6 @@
             </objects>
             <point key="canvasLocation" x="902.69865067466276" y="981.60000000000002"/>
         </scene>
-        <!--Join Game View Controller-->
-        <scene sceneID="PYA-pS-b6g">
-            <objects>
-                <viewController id="LmF-JQ-27D" customClass="JoinGameViewController" customModule="VirtualChips" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rW0-kE-Bim">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pokerBG" translatesAutoresizingMaskIntoConstraints="NO" id="oqw-vr-g98">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65L-ub-xsc">
-                                <rect key="frame" x="285" y="32" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMQ-97-hML">
-                                <rect key="frame" x="259" y="113" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="cameraImage"/>
-                                <connections>
-                                    <segue destination="AXj-7j-XtF" kind="presentation" id="zby-iH-tob"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="WJn-AZ-4sd"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S0S-Iu-Sac" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1472.1139430284859" y="2728.8000000000002"/>
-        </scene>
         <!--Scanner View Controller-->
         <scene sceneID="j4R-P6-idp">
             <objects>
@@ -366,18 +330,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-Oc-mNl">
-                                        <rect key="frame" x="306" y="14" width="55" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan Host's QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-Oc-mNl">
+                                        <rect key="frame" x="240" y="14" width="188" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-GT-J3i">
-                                        <rect key="frame" x="8" y="14" width="30" height="30"/>
+                                        <rect key="frame" x="8" y="14" width="86" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <segue destination="jA1-0p-EYp" kind="unwind" unwindAction="unwindToGamehubWithUnwindSegue:" id="yN3-ph-tNu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -395,13 +361,15 @@
                         <viewLayoutGuide key="safeArea" id="asu-IJ-0LU"/>
                     </view>
                     <connections>
-                        <outlet property="messageLabel" destination="3lN-dD-M73" id="fuv-Mb-654"/>
+                        <outlet property="qrMessageLabel" destination="3lN-dD-M73" id="zdL-l6-TOO"/>
                         <outlet property="topbar" destination="XuL-SU-cBB" id="mDs-jA-Oef"/>
+                        <segue destination="JSP-cU-hJe" kind="show" identifier="waitingForPlayersSegue" id="sUk-Bh-d7X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhL-ax-AA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jA1-0p-EYp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1882.3088455772115" y="3492"/>
+            <point key="canvasLocation" x="1648.4257871064469" y="2728.8000000000002"/>
         </scene>
         <!--Loading Screen View Controller-->
         <scene sceneID="75u-uk-Z4R">
@@ -411,8 +379,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-Ic-R2c">
-                                <rect key="frame" x="259" y="20" width="148" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting For Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-Ic-R2c">
+                                <rect key="frame" x="259" y="169" width="166" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -422,10 +390,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="UOR-wg-aHE"/>
                     </view>
+                    <connections>
+                        <segue destination="Ekl-fG-7E7" kind="show" identifier="startGameSegue" id="667-fh-smf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKw-lP-0h3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.5127436281859" y="3701.5999999999999"/>
+            <point key="canvasLocation" x="1334.4827586206898" y="3701.5999999999999"/>
         </scene>
         <!--In Game View Controller-->
         <scene sceneID="HBx-oN-PB5">
@@ -628,6 +599,7 @@
                                 <connections>
                                     <action selector="buttonClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="aIv-AN-PJE"/>
                                     <action selector="cancelNewGameClicked:" destination="PTr-WJ-BfM" eventType="touchUpInside" id="pVD-6Y-gdJ"/>
+                                    <segue destination="xA7-PD-4rE" kind="unwind" unwindAction="unwindToGamehubWithUnwindSegue:" id="vbZ-Pb-Pj6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -647,6 +619,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWh-tn-aSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xA7-PD-4rE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="590.55472263868069" y="2728.8000000000002"/>
         </scene>
@@ -697,11 +670,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraImage" width="150" height="150"/>
         <image name="inGameView" width="640" height="359"/>
         <image name="pokerBG" width="512" height="352"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cX5-ey-9g0"/>
+        <segue reference="TJn-oQ-5d6"/>
+        <segue reference="qmW-sH-ss9"/>
     </inferredMetricsTieBreakers>
 </document>

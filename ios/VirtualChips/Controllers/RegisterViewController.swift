@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-ServerConnect.socket?.delegate = self
+        ServerConnect.socket?.delegate = self
         errorLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
