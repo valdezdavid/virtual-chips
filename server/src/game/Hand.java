@@ -39,8 +39,11 @@ public class Hand {
 	public void placeBet(User u, int amount) {
 		System.out.println(currentBet);
 		pot.placeBet(u, amount);
+		if (u.getCurrentBet() > currentBet) {
+			lastBetter = u;
+		}
 		currentBet = Math.max(u.getCurrentBet(), currentBet);
-		lastBetter = u;
+		
 	}
 	
 	public boolean isRoundOver() {
