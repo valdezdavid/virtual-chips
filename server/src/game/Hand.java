@@ -39,8 +39,11 @@ public class Hand {
 	public void placeBet(User u, int amount) {
 		System.out.println(currentBet);
 		pot.placeBet(u, amount);
+		if (u.getCurrentBet() > currentBet) {
+			lastBetter = u;
+		}
 		currentBet = Math.max(u.getCurrentBet(), currentBet);
-		lastBetter = u;
+		
 	}
 	
 	public boolean isRoundOver() {
@@ -96,7 +99,7 @@ public class Hand {
 				int maxRaise = nextToMove.getChips() - toCall;
 				moveOptionsResponse.addParam("maxRaise", maxRaise);
 				moveOptionsResponse.addParam("minRaise", game.getBigBlind() < maxRaise ? game.getBigBlind() : maxRaise);
-				if (currentBet == 0) {
+				if (toCall == 0) {
 					moveOptionsResponse.addParam("canCall", false);
 				}else {
 					moveOptionsResponse.addParam("canCall", true);
@@ -115,12 +118,14 @@ public class Hand {
 			Set<User> usersInPot = pot.getUsersInPot();
 			Response r = new Response("chooseWinner");
 			r.addParam("numUsers", usersInPot.size());
-			int i = 0;
+			int i = 1;
 			for (User u : usersInPot) {
 				r.addParam(String.valueOf(i), u.getId());
 				i++;
 			}
 			r.send(game.getHost());
+		}else {
+			game.newHand();
 		}
 	}
 	

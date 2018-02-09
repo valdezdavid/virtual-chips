@@ -8,14 +8,50 @@
 //Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 import UIKit
 import Starscream
-class InGameViewController: UIViewController {
+class InGameViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return potentialWinners.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPlayer", for: indexPath)
+        let player = Game.allPlayers[potentialWinners[indexPath.row]]
+        cell.textLabel?.text = player?.username
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let messageContent = ["userId" : String(potentialWinners[indexPath.row])]
+        let m1 = SendingMessage(command: "chooseWinner", params: messageContent)
+        let jsonEncoder = JSONEncoder()
+        do {
+            if let jsonData = try? jsonEncoder.encode(m1) {
+                if let jsonString = String(data: jsonData, encoding: .utf8){
+                    ServerConnect.socket?.write(string: jsonString)
+                    winnerSelectView.isHidden = true
+                    print("below is the jsonString")
+                    print(jsonString)
+                }
+                else{
+                    print ("encoding failed")
+                }
+            }
+            else {
+                print ("encoding failed")
+                return
+            }
+        }
+    }
+    
     
     
     @IBOutlet weak var FoldButton: UIButton!
-    @IBOutlet weak var RaiseField: UITextField!
     @IBOutlet weak var CallButton: UIButton!
     @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var RaiseButton: UIButton!
+    @IBOutlet weak var raisePlusButton: UIButton!
+    @IBOutlet weak var raiseMinusButton: UIButton!
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var currentChipsLabel: UILabel!
@@ -31,29 +67,42 @@ class InGameViewController: UIViewController {
     var currentPotSize = 0
     var nextPlayer = -1
     var nextPlayerChips = 0
+    var raiseAmount = 0
+    
+    
+    @IBOutlet weak var winnerSelectTableView: UITableView!
+    @IBOutlet weak var winnerSelectText: UILabel!
+    @IBOutlet weak var winnerSelectView: UIView!
+    var potentialWinners: [Int] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        winnerSelectView.isHidden = true
         ServerConnect.socket!.delegate = self
         // Do any additional setup after loading the view.
         usernameLabel.text = Game.currentPlayer!.username
         currentChipsLabel.text = String(Game.currentPlayer!.currentBalance)
-        
-        let toolbarDone = UIToolbar.init()
-        toolbarDone.sizeToFit()
-        let barBtnDone = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.done,
-                                              target: self, action: #selector(InGameViewController.doneButton_Clicked(_:)))
-        
-        toolbarDone.items = [barBtnDone] // You can even add cancel button too
-        RaiseField.inputAccessoryView = toolbarDone
+
     }
     
-    @objc func doneButton_Clicked( _ sender: Any?)
-    {
-        self.resignFirstResponder()
+    @IBAction func increaseRaise(_ sender: Any) {
+        raiseAmount += 5
+        if (raiseAmount > currentMaxBet){
+            raiseAmount = currentMaxBet
+        }
+        RaiseButton.setTitle("Raise " + String(raiseAmount), for: .normal)
     }
+    @IBAction func decreaseBet(_ sender: UIButton) {
+        raiseAmount -= 5
+        if (raiseAmount < currentMinBet){
+            raiseAmount = currentMinBet
+        }
+        RaiseButton.setTitle("Raise " + String(raiseAmount), for: .normal)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -125,15 +174,14 @@ class InGameViewController: UIViewController {
         }
     }
     @IBAction func clickRaise(_ sender: UIButton) {
-        var raiseAmount = Int(RaiseField.text!);
-        if (raiseAmount! > currentMaxBet){
+        if (raiseAmount > currentMaxBet){
             raiseAmount = currentMaxBet
         }
-        if (raiseAmount! < currentMinBet){
+        if (raiseAmount < currentMinBet){
             raiseAmount = currentMinBet
         }
         //when submit button is pressed
-        let messageContent = ["amount" : String(raiseAmount! + currentCallAmount)]
+        let messageContent = ["amount" : String(raiseAmount + currentCallAmount)]
         let m1 = SendingMessage(command: "bet", params: messageContent)
         let jsonEncoder = JSONEncoder()
         do {
@@ -194,11 +242,13 @@ extension InGameViewController : WebSocketDelegate {
             if (receivedMessage.params["canRaise"] == "true"){
                 //display the option for raising to the user
                 RaiseButton.isHidden = false;
-                RaiseField.isHidden = false
+                raisePlusButton.isHidden = false
+                raiseMinusButton.isHidden = false
             }
             else{
-                RaiseButton.isHidden = true;
-                RaiseField.isHidden = true
+                RaiseButton.isHidden = true
+                raisePlusButton.isHidden = true
+                raiseMinusButton.isHidden = true
             }
             if (receivedMessage.params["canCall"] == "true"){
                 //display the option for raising to the user
@@ -215,6 +265,8 @@ extension InGameViewController : WebSocketDelegate {
             currentMinBet = Int (receivedMessage.params["minRaise"]!)!
             currentPotSize = Int (receivedMessage.params["potSize"]!)!
             potSizeLabel.text = "Chips in pot: " + String(currentPotSize)
+            raiseAmount = currentMinBet
+            RaiseButton.setTitle("Raise " + String(raiseAmount), for: .normal)
             
         }else if (receivedMessage.event == "playerToMove"){
             //two text fields should be created for the purpose of displaying this.
@@ -227,7 +279,8 @@ extension InGameViewController : WebSocketDelegate {
                 RaiseButton.isHidden = true;
                 CallButton.isHidden = true;
                 FoldButton.isHidden = true;
-                RaiseField.isHidden = true
+                raisePlusButton.isHidden = true
+                raiseMinusButton.isHidden = true
             }
         }else if (receivedMessage.event == "bet"){
             Game.allPlayers[nextPlayer]?.currentBalance = (nextPlayerChips - Int(receivedMessage.params["amount"]!)!)
@@ -240,6 +293,24 @@ extension InGameViewController : WebSocketDelegate {
         }else if (receivedMessage.event == "fold"){
             Game.allPlayers[nextPlayer]?.currentBalance = nextPlayerChips
             lastMoveLabel.text = (Game.allPlayers[nextPlayer]?.username)! + " folded"
+        }else if (receivedMessage.event == "chooseWinner"){
+            //Check if there is atleast 1 player
+            if(Int(receivedMessage.params["numUsers"]!)! > 0){
+                let numUsers = Int (receivedMessage.params["numUsers"]!)!
+                
+                var counter = 1
+                potentialWinners = []
+                while counter <= numUsers{
+                    potentialWinners.append(Int (receivedMessage.params[String (counter)]!)!)
+                    counter += 1
+                }
+                winnerSelectView.isHidden = false
+                winnerSelectTableView.reloadData()
+            }
+        }else if (receivedMessage.event == "win"){
+            let winner = Game.allPlayers[Int(receivedMessage.params["userId"]!)!]
+            winner?.currentBalance += Int(receivedMessage.params["amount"]!)!
+            lastMoveLabel.text = (winner?.username)! + " won " + receivedMessage.params["amount"]!
         }
         currentChipsLabel.text = String(Game.currentPlayer!.currentBalance)
     }

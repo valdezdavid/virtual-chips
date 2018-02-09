@@ -8,7 +8,7 @@
 ///Stiven Deleur, Anubhav Garg, Valerie Gomez, David Valdez, Rohan Shastri
 import UIKit
 import Starscream
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     //Declares Register Segue as Constant (Register -> GameHub)
     let REGISTER_GAMEHUB_SEGUE = "registerGameHubSegue";
@@ -30,6 +30,11 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 
